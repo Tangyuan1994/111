@@ -1,0 +1,55 @@
+<md-content layout="column" layout-align="start start">
+    <!--Top toolbar-->
+    <div flex="10" layout="row" layout-align="space-between center" class="top-browse-toolbar" md-whiteframe>
+        <div flex-md="0" flex-gt-md="0">
+
+        </div>
+        <div>
+            <i class="material-icons" style="color: #fff; font-size: 2.5em">search</i>
+        </div>
+        <md-input-container flex="15" style="padding-top:{{isTablet?10:20}}px; padding-left: 5px">
+            <input type="text" name="search" ng-model="search" style="color:#fff;border-bottom-color: #fff">
+        </md-input-container>
+        <md-checkbox md-no-ink class="black-checkbox" ng-model="deepSearch" style="margin: 10px;display: flex;flex-direction: column;justify-content: center"></md-checkbox>
+        <span flex-gt-md="10">Deep Search</span>
+        <div flex-md="50" flex-gt-md="55" style="text-align: center">
+            Name of the dataset
+        </div>
+        <div flex="20" layout="row" layout-align="end center">
+            <i class="material-icons" style="color: #fff; font-size: 2.5em; padding-right: 20px">edit</i>
+            <md-menu>
+                <md-button class="md-icon-button"  ng-click="openSortMenu($mdMenu, $event)" style="width:65px;height:65px; margin:0">
+                    <i class="material-icons" style="color: #fff; font-size: 2.5em; padding-right: 20px">sort</i>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button ng-click="changeTypeSort('popularity')" layout="row">
+                            <i class="material-icons" style="color: #000; font-size: 2.5em; padding-right: 20px">visibility</i>
+                            Popularity
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="changeTypeSort('date')">
+                            <i class="material-icons" style="color: #000; font-size: 2.5em; padding-right: 20px">access_time</i>
+                            New
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button  ng-click="changeTypeSort('rate')">
+                            <i class="material-icons" style="color: #000; font-size: 2.5em; padding-right: 20px">star</i>
+                            Top Rated
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            Sorted by {{typeSort}}
+        </div>
+        <div flex-md="15" flex-gt-md="10"></div>
+
+    </div>
+
+    <!--Content-->
+    <div flex="90" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+        Hello world !
+    </div>
+</md-content>

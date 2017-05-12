@@ -1,0 +1,19 @@
+.left-toolbar{
+    background-color: #404040;
+    position: fixed;
+    left:0;
+    width: 10%;
+    height:100%;
+    z-index: 1;
+    color: #fff;
+}
+
+.top-toolbar{
+    background-color: #452506;
+    height:9.5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left:5%;
+    color: #fff;
+}
