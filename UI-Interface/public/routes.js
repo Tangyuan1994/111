@@ -12,6 +12,11 @@ var daeNG = angular.module('daeNG', ['ngMaterial', 'ngAnimate', 'ngAria','ui.rou
                 templateUrl: '../views/index.html',
                 controller: 'IndexController'
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: 'admin/admin.html',
+                controller: 'AdminController'
+            })
             .state('browse', {
                 url: '/browse',
                 templateUrl: 'browse/browse.html',
