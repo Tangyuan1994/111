@@ -1,9 +1,31 @@
-<div style="padding:20px;text-align: start;">
-    <md-button ng-click="getAll()">Get all images</md-button>
-    <md-button ng-click="getOne()">Get one image</md-button>
-    <md-button ng-click="createDatabase()">Create New DB</md-button>
-    <md-button ng-click="addView()">Add a new view</md-button>
-    <div ng-repeat="data in browsedImages">
-        <img ng-src="data:image/png;base64,{{data.value.image}}">
-    </div>
+<div style="text-align: start;">
+    <md-tabs md-dynamic-height>
+        <md-tab label="CouchDB">
+            <div style="padding-left: 20px">
+                <md-button ng-click="getAll()">Get all images</md-button>
+                <md-button ng-click="getOne()">Get one image</md-button>
+                <md-button ng-click="createDatabase()">Create New DB</md-button>
+                <md-button ng-click="addView()">Add a new view</md-button>
+                <md-button ng-click="initBDD()">Initialisation de la Base de Données</md-button>
+                <div ng-repeat="data in browsedImages">
+                    <img ng-src="data:image/png;base64,{{data.value.image}}">
+                </div>
+            </div>
+        </md-tab>
+        <md-tab label="ElasticSearch" style="padding-left: 20px">
+            <div style="padding-left: 20px">
+                <md-button ng-click="initES()">Initialisation ElasticSearch</md-button>
+                <md-button ng-click="deleteES()">Delete ElasticSearch</md-button>
+            </div>
+        </md-tab>
+        <md-tab label="UI-Interface" style="padding-left: 20px">
+            <div style="padding-left: 20px">
+                <md-button ng-click="testHeritage('Hello world')">Test héritage fils->père</md-button>
+                <md-button ng-click="hasClicked()">Test Heritage fils->fils</md-button>
+            </div>
+        </md-tab>
+    </md-tabs>
+
+
+
 </div>

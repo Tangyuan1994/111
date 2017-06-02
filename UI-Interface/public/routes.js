@@ -1,4 +1,4 @@
-var daeNG = angular.module('daeNG', ['ngMaterial', 'ngAnimate', 'ngAria','ui.router']);
+var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ngAria','ui.router']);
 
 (function(app) {
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider,$controller) {
@@ -8,9 +8,11 @@ var daeNG = angular.module('daeNG', ['ngMaterial', 'ngAnimate', 'ngAria','ui.rou
 
         $stateProvider
 
-            .state('index', {
-                templateUrl: '../views/index.html',
-                controller: 'IndexController'
+
+            .state('home', {
+                url: '/',
+                templateUrl: 'home/home.html',
+                controller: 'HomeController'
             })
             .state('admin', {
                 url: '/admin',
@@ -42,6 +44,11 @@ var daeNG = angular.module('daeNG', ['ngMaterial', 'ngAnimate', 'ngAria','ui.rou
                 templateUrl: 'upload/upload.html',
                 controller: 'UploadController'
             })
-        
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'contact/contact.html',
+                controller: 'ContactController'
+            })
+
     }]);
 })(daeNG);

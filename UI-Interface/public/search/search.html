@@ -1,3 +1,9 @@
 <md-content style="padding: 15px">
     Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
+    <div ng-show="!clickedSearch">
+        Vous n'avez pas cliqué sur le bouton :o
+    </div>
+    <div ng-show="clickedSearch">
+        Vous avez cliqué sur le bouton :D
+    </div>
 </md-content>

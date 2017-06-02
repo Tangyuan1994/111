@@ -36,6 +36,27 @@ angular.module('daeNG')
             })
         };
 
+        $scope.initBDD = function(){
+            $http({
+                method: 'POST',
+                url: 'init'
+            })
+        };
+
+        $scope.initES = function(){
+            $http({
+                method:'POST',
+                url: 'initES'
+            })
+        }
+
+        $scope.deleteES = function(){
+            $http({
+                method: 'POST',
+                url: 'deleteES'
+            })
+        }
+
         $scope.createDatabase = function () {
             var token = $scope.random(10);
             $http({

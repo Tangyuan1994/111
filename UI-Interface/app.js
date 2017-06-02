@@ -6,13 +6,12 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
+var server = require('./server/server');
 // var users = require('./routes/users');
 
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
@@ -21,11 +20,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 //Allow Angular to find modules scripts
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 
 
-app.use('/', index);
+app.use('/', server);
 // app.use('/users', users);
 
 // catch 404 and forward to error handler
