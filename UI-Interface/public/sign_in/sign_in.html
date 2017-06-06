@@ -1,0 +1,76 @@
+<md-content flex="50" layout="column" style="padding: 15px; height: 100%; margin-left: 26%">
+    <div flex="20" layout="row" layout-align="space-around center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+
+        <div flex="50" layout="column" layout-align="end center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+            <md-input-container flex="15" style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+                <label>
+                    First Name
+                </label>
+                <input type="text" name="search" ng-model="searchFirst" style="color:#452506;border-bottom-color: #452506">
+            </md-input-container>
+        </div>
+
+        <div flex="50" layout="column" layout-align="end center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+            <md-input-container flex="15" style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+                <label>
+                    Last Name
+                </label>
+                <input type="text" name="search" ng-model="searchLast" style="color:#452506;border-bottom-color: #452506">
+            </md-input-container>
+        </div>
+    </div>
+
+    <div flex="20"  layout="row"  layout-align="center center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+        <md-input-container style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+            <label>
+                Email
+            </label>
+            <input type="email" name="search" ng-model="searchEmail" style="color:#452506;border-bottom-color: #452506">
+        </md-input-container>
+    </div>
+
+    <div flex="20" layout="row" layout-align="center center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+        <md-input-container style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+            <label>
+                Choose a Password
+            </label>
+            <input type="password" name="search" ng-model="searchPass" style="color:#452506;border-bottom-color: #452506">
+        </md-input-container>
+    </div>
+
+    <div flex="20" layout="row" layout-align="center center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+        <md-input-container style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+            <label>
+                Rewrite your password
+            </label>
+            <input type="password" name="search" ng-model="searchPass2" style="color:#452506;border-bottom-color: #452506">
+        </md-input-container>
+    </div>
+
+    <div flex="20" layout="row" layout-align="space-around center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+        <div flex="20" layout="column" layout-align="end center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+            <md-input-container flex="15" style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+                <label>
+                    Postal Code
+                </label>
+                <input type="text" name="search" ng-model="searchPostal" style="color:#452506;border-bottom-color: #452506">
+            </md-input-container>
+        </div>
+
+        <div flex="60" layout="column" layout-align="end center" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+            <md-input-container flex="15" style="padding-top:{{isTablet?10:10}}px; padding-left: 5px">
+                <label>
+                    City
+                </label>
+                <input type="text" name="search" ng-model="searchCity" style="color:#452506;border-bottom-color: #452506">
+            </md-input-container>
+        </div>
+
+    </div>
+
+    <div flex="20" layout="row" layout-align="end center">
+        <md-button class="md-icon-button"  ng-click="openSortMenu($mdMenu, $event)" style="width:65px;height:65px; margin:0; padding-top:13px">
+            <i class="material-icons" style="color: #452506; font-size: 2em; padding-right: 20px">send</i>
+        </md-button>
+    </div>
+</md-content>

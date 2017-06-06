@@ -49,6 +49,11 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
                 templateUrl: 'contact/contact.html',
                 controller: 'ContactController'
             })
+            .state('sign_in', {
+                url: '/SignIn',
+                templateUrl: 'sign_in/sign_in.html',
+                controller: 'SignInController'
+            })
 
     }]);
 })(daeNG);
