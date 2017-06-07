@@ -2,13 +2,10 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
 
 (function(app) {
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider,$controller) {
-
-
+        
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-
-
             .state('home', {
                 url: '/',
                 templateUrl: 'home/home.html',

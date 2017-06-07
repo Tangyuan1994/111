@@ -6,7 +6,8 @@
                 <md-button ng-click="getOne()">Get one image</md-button>
                 <md-button ng-click="createDatabase()">Create New DB</md-button>
                 <md-button ng-click="addView()">Add a new view</md-button>
-                <md-button ng-click="initBDD()">Initialisation de la Base de Données</md-button>
+                <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
+                <md-button ng-click="initBDDImages()">Initialisation de la Base de Données Images</md-button>
                 <div ng-repeat="data in browsedImages">
                     <img ng-src="data:image/png;base64,{{data.value.image}}">
                 </div>
@@ -25,7 +26,4 @@
             </div>
         </md-tab>
     </md-tabs>
-
-
-
 </div>

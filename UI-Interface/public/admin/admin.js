@@ -43,6 +43,13 @@ angular.module('daeNG')
             })
         };
 
+        $scope.initBDDImages = function(){
+            $http({
+                method: 'POST',
+                url: 'initBDDImages'
+            })
+        };
+
         $scope.initES = function(){
             $http({
                 method:'POST',
