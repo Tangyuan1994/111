@@ -1,6 +1,7 @@
 var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ngAria','ui.router']);
 
 (function(app) {
+
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider,$controller) {
         
         $urlRouterProvider.otherwise('/');
@@ -19,7 +20,14 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
             .state('browse', {
                 url: '/browse',
                 templateUrl: 'browse/browse.html',
-                controller: 'BrowseController'
+                controller: 'BrowseController',
+                authorized: true,
+                onEnter: function(){
+                    console.log("Vous êtes en train de naviguer sur la page Browse")
+                },
+                onExit: function(){
+                    console.log("Vous êtes en train de quitter la page Browse")
+                }
             })
             .state('search', {
                 url: '/search',

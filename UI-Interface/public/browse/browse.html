@@ -1,6 +1,6 @@
 <md-content layout="column" layout-align="start start">
     <!--Top toolbar-->
-    <div flex="10" layout="row" layout-align="space-between center" class="top-browse-toolbar" md-whiteframe style="top:{{isTablet?7:9.5}}%">
+    <div flex="10" layout="row" layout-align="space-between center" class="top-browse-toolbar" md-whiteframe style="top:{{isLarge?7.5:9.5}}%">
 
         <div>
             <i class="material-icons" style="color: #fff; font-size: 2em">search</i>
@@ -47,7 +47,7 @@
     </div>
 
     <!--Content-->
-    <div flex="90" style="margin-top:{{isTablet?5:3.5}}%;padding:20px;text-align: start;">
+    <div flex="90" style="margin-top:{{isTablet?5:isLarge?4.5:3.5}}%;padding:20px;text-align: start;">
         Hello world !<BR>
     </div>
 </md-content>
