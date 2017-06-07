@@ -4,6 +4,10 @@
             <div style="padding-left: 20px">
                 <md-button ng-click="getAll()">Get all images</md-button>
                 <md-button ng-click="getOne()">Get one image</md-button>
+                <md-button ng-click="getRates()">Get one rates array</md-button>
+                <md-button ng-click="getTags()">Get one tags array</md-button>
+                <md-button ng-click="addTag()">Add one tag </md-button>
+                <md-button ng-click="modifyTag()">Modify one tag </md-button>
                 <md-button ng-click="createDatabase()">Create New DB</md-button>
                 <md-button ng-click="addView()">Add a new view</md-button>
                 <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
@@ -11,6 +15,13 @@
                 <div ng-repeat="data in browsedImages">
                     <img ng-src="data:image/png;base64,{{data.value.image}}">
                 </div>
+                <div ng-repeat="tag in tags">
+                    {{tag}}
+                </div>
+                <div ng-repeat="rate in rates">
+                    {{rate}}
+                </div>
+
             </div>
         </md-tab>
         <md-tab label="ElasticSearch" style="padding-left: 20px">

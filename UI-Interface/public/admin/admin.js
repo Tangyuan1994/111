@@ -21,6 +21,8 @@ angular.module('daeNG')
                 url: '/datasets/' + id
             }).then(function successCallback(response) {
                 console.log(response.data);
+                $scope.rates = [];
+                $scope.tags = [];
                 $scope.browsedImages = [{"value":{}}];
                 $scope.browsedImages[0].value.image = response.data.image;
                 console.log("L'image d'ID " + id + " a été récupérée !")
@@ -55,14 +57,14 @@ angular.module('daeNG')
                 method:'POST',
                 url: 'initES'
             })
-        }
+        };
 
         $scope.deleteES = function(){
             $http({
                 method: 'POST',
                 url: 'deleteES'
             })
-        }
+        };
 
         $scope.createDatabase = function () {
             var token = $scope.random(10);
@@ -70,5 +72,66 @@ angular.module('daeNG')
                 method: 'POST',
                 url: '/create/newDb/' + token
             })
-        }
+        };
+
+        $scope.getTags = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            $http({
+                method: 'GET',
+                url: '/document/' + id + '/getTags'
+            }).then(function successCallback(response) {
+                console.log(response.data);
+                $scope.browsedImages = [{"value":{}}];
+                $scope.rates = [];
+                $scope.tags = response.data.tags;
+                console.log("Le tableau de tags de l'ID " + id + " a été récupéré !")
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
+        $scope.getRates = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            $http({
+                method: 'GET',
+                url: '/document/' + id + '/getRates'
+            }).then(function successCallback(response) {
+                console.log(response.data);
+                $scope.browsedImages = [{"value":{}}];
+                $scope.tags = [];
+                $scope.rates = response.data.rates;
+                console.log("Le tableau de notes de l'ID " + id + " a été récupéré !")
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
+        $scope.addTag = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            var tag = "test3";
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/adds/' + tag
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
+        $scope.modifyTag = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            var tag1 = "Test3";
+            var tag2 = "Test4";
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/modify/' + tag1 + '/' + tag2
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
+
     });
