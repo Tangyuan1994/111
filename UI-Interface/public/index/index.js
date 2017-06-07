@@ -34,7 +34,8 @@ angular.module('daeNG')
 
         $scope.heightWindow = $window.innerHeight - 85;
 
-        $scope.isTablet = $mdMedia("md") || $mdMedia("lg");
+        $scope.isTablet = $mdMedia("md");
+        $scope.isLarge = $mdMedia("lg");
 
 
 /**
