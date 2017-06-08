@@ -133,5 +133,18 @@ angular.module('daeNG')
             });
         };
 
+        $scope.deleteTag = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            var tag = "Test3";
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/delete/' + tag
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
 
     });

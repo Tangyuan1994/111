@@ -466,6 +466,23 @@ router.post("/document/:id/modify/:tag1/:tag2", function(req,res){
 
 router.post("/document/:id/delete/:tag", function(req,res){
     // TODO : Remove Tag
+    nano.use('images').get('5330e2f3a0dd8ee433e3e702df012c19', function(err, body){
+        if (!err){
+            res.json(body);
+            console.log(body.tags);
+            if (body.tags.indexOf("Test3")>-1){
+                body.tags.splice(body.tags.indexOf("Test3"),1);
+                nano.use('images').insert(body,function(err,body){
+                    if (!err){
+                        console.log("Reussite")
+                    } else {
+                        console.log(err);
+                    }
+                });
+            }
+        }
+    });
+
 });
 
 router.post("/document/:id/add/:idAnnotation", function(req,res){
