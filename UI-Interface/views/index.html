@@ -29,41 +29,40 @@
         <a ui-sref="home"><img src="index/lehigh_logo.png" style="width: 60px;height: 60px"></a>
     </div>
     <div flex="10">
-        <md-button ui-sref="search" class="md-icon-button" aria-label="Search" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="search({{tmpAnon}})" class="md-icon-button" aria-label="Search" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">search</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="contact" class="md-icon-button" aria-label="Contact" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="contact({{tmpAnon}})" class="md-icon-button" aria-label="Contact" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">send</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="tutorial" class="md-icon-button" aria-label="Tutorials" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="tutorial({{tmpAnon}})" class="md-icon-button" aria-label="Tutorials" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">school</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="browse" class="md-icon-button" aria-label="Browse Data" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="browse({{tmpAdmin}})" class="md-icon-button" aria-label="Browse Data" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">archive</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="algorithms" class="md-icon-button" aria-label="Algorithms" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="algorithms({{tmpAnon}})" class="md-icon-button" aria-label="Algorithms" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">multiline_chart</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="upload" class="md-icon-button" aria-label="Upload Data" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="upload({{tmpAnon}})" class="md-icon-button" aria-label="Upload Data" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">cloud_upload</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="admin" class="md-icon-button" aria-label="Admin panel" style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="admin({{tmpAdmin}})" class="md-icon-button" aria-label="Admin panel" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">apps</i>
         </md-button>
     </div>
-
     <div flex="10">
 
     </div>
@@ -80,24 +79,24 @@
         <div flex-gt-md="30" flex-md="10">
 
         </div>
-        <div ng-show="userConnected.name.length>0" flex-gt-md="30" flex-md="40" layout="row" layout-align="space-between center">
-            <div style="color:#fff; font-size: 1.5em">Welcome back, {{userConnected.gender=='H' ? 'M' : 'Ms'}} {{userConnected.name}}</div>
-            <md-button ng-click="disconnection()" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">
-                <i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>
-            </md-button>
-        </div>
+        <!--<div ng-show="userConnected.name.length>0" flex-gt-md="30" flex-md="40" layout="row" layout-align="space-between center">-->
+            <!--<div style="color:#fff; font-size: 1.5em">Welcome back, {{userConnected.gender=='H' ? 'M' : 'Ms'}} {{userConnected.name}}</div>-->
+            <!--<md-button ng-click="disconnection()" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">-->
+                <!--<i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>-->
+            <!--</md-button>-->
+        <!--</div>-->
         <div ng-show="!userConnected.name.length>0" flex-gt-md="40" flex-md="40" layout="row" layout-align="space-between center" style="color:#fff;border-color: #fff">
             <form name="connexion" layout="row" layout-align="space-between center" style="padding-top:20px">
                 <md-input-container flex="45">
                     <label style="color:#fff;border-color: #fff">Username</label>
-                    <input style="color:#fff;border-color: #fff" name="username" type="text" ng-model="tmpUsername" required md-no-asterisk>
+                    <input style="color:#fff;border-color: #fff" name="username" type="text" ng-model="tmpUser.username" required md-no-asterisk>
                     <div ng-messages="connexion.username.$error" style="color:red">
                         <div ng-message="required" style="font-size: 0.65em">You may enter your username</div>
                     </div>
                 </md-input-container>
                 <md-input-container flex="45">
                     <label style="color:#fff;border-color: #fff">Password</label>
-                    <input style="color:#fff;border-color: #fff" name="password" type="password" ng-model="tmpPassword" required md-no-asterisk>
+                    <input style="color:#fff;border-color: #fff" name="password" type="password" ng-model="tmpUser.password" required md-no-asterisk>
                     <div ng-messages="connexion.password.$error" style="color:red">
                         <div ng-message="required" style="font-size: 0.65em">You may enter your password</div>
                     </div>

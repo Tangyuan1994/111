@@ -1,3 +1,15 @@
 <md-content style="padding: 15px">
+    <div ng-show="principal.isAuthenticated()">
+        I'm logged in
+    </div>
+    <div ng-hide="principal.isAuthenticated()">
+        I'm not logged in
+    </div>
+    <div ng-hide="principal.isIdentityResolved()">
+        You're anonymous
+    </div>
+    <div ng-show="principal.isIdentityResolved()">
+        Welcome dear {{principal.getIdentity()}}
+    </div>
     Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
 </md-content>

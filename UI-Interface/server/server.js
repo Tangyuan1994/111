@@ -200,6 +200,17 @@ router.post('/initBDDImages', function(req,res){
     })
 })
 
+router.get('/getCredentials/:username/:password', function(req,res){
+
+    if (req.params.username=="Flow" && req.params.password=="123456"){
+        res.json({"roles":["Admin","Test","Dev","Canard"]})
+    } else if (req.params.username=="Bart" && req.params.password=="123456789"){
+        res.json({"roles":["SuperUser","Leader"]})
+    } else {
+        res.json({"roles":["Anonymous"]})
+    }
+})
+
 router.post('/init', function(req,res){
 
     //ElasticSearch Initialization

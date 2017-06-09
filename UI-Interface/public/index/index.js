@@ -3,7 +3,7 @@
  */
 
 angular.module('daeNG')
-    .controller('IndexController', function ($scope,$mdMedia,$window, $mdSidenav) {
+    .controller('IndexController', function ($scope,$mdMedia,$window, principal, $stateParams,$mdSidenav) {
 
 /**
  ------------------------------------------------------------------
@@ -19,6 +19,16 @@ angular.module('daeNG')
             $scope.clickedSearch = !$scope.clickedSearch;
         }
 
+        $scope.username = "Flow"
+        $scope.password = "123456"
+
+        $scope.tmpUser = $stateParams.data
+
+        $scope.tmpAdmin = {username:"Flow", password: "123456"}
+        $scope.tmpAnon = {username:"", password: ""}
+
+        $scope.isAdmin = false;
+
         $scope.title = "Document Analysis and Exploitation";
         $scope.clickedSearch = false;
 
@@ -32,10 +42,17 @@ angular.module('daeNG')
             return text;
         };
 
+        $scope.login = function(){
+            $scope.isAdmin = !$scope.isAdmin;
+        }
+
         $scope.heightWindow = $window.innerHeight - 85;
 
         $scope.isTablet = $mdMedia("md");
         $scope.isLarge = $mdMedia("lg");
+
+        $scope.principal = principal
+        
 
 
 /**
@@ -45,8 +62,7 @@ angular.module('daeNG')
  **/
 
         $scope.user = {"username":"", "password":""};
-        $scope.tmpUsername = "";
-        $scope.tmpPassword = "";
+
 
         $scope.connection = function(name){
             $scope.userConnected = {"name":name,"gender":"H"}
@@ -57,6 +73,12 @@ angular.module('daeNG')
             $scope.tmpPassword = "";
         };
 
+
+        /**
+         ------------------------------------------------------------------
+         SIDENAV
+         ------------------------------------------------------------------
+         */
         $scope.toggleRight = buildToggler('right');
         $scope.signIn = {};
         $scope.isOpenRight = function(){
