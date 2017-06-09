@@ -3,7 +3,7 @@
  */
 
 angular.module('daeNG')
-    .controller('IndexController', function ($scope,$mdMedia,$window) {
+    .controller('IndexController', function ($scope,$mdMedia,$window, $mdSidenav) {
 
 /**
  ------------------------------------------------------------------
@@ -57,6 +57,33 @@ angular.module('daeNG')
             $scope.tmpPassword = "";
         };
 
+        $scope.toggleRight = buildToggler('right');
+        $scope.signIn = {};
+        $scope.isOpenRight = function(){
+            return $mdSidenav('right').isOpen();
+        };
+        $scope.closeButton = function () {
+            // Component lookup should always be available since we are not using `ng-if`
+            $scope.signIn = {};
+            $mdSidenav('right').close()
+                .then(function () {
+                    $log.debug("close RIGHT is done");
+                });
+        };
+        $scope.validate = function(){
+
+        };
+
+        function buildToggler(navID) {
+            return function() {
+                // Component lookup should always be available since we are not using `ng-if`
+                $mdSidenav(navID)
+                    .toggle()
+                    .then(function () {
+                        $log.debug("toggle " + navID + " is done");
+                    });
+            };
+        }
 
 
     });

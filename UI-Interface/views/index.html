@@ -63,11 +63,7 @@
             <i class="material-icons" style="color: #fff; font-size: 2.5em">apps</i>
         </md-button>
     </div>
-    <div flex="10">
-        <md-button ui-sref="sign_in" class="md-icon-button" aria-label="Admin panel" style="width:65px;height:65px; margin:0">
-            <i class="material-icons" style="color: #fff; font-size: 2.5em">add_box</i>
-        </md-button>
-    </div>
+
     <div flex="10">
 
     </div>
@@ -108,6 +104,16 @@
                 </md-input-container>
 
             </form>
+            <div flex="10">
+                <!--<md-button ui-sref="sign_in" class="md-icon-button" aria-label="Admin panel" style="width:40px;height:55px; margin:0">
+                    <i class="material-icons" style="color: #fff; font-size: 2.5em">add_circle</i>
+                </md-button>-->
+                <md-button ng-click="toggleRight()"
+                           ng-hide="isOpenRight()"
+                           class="md-icon-button" aria-label="Admin panel" style="width:40px;height:55px; margin:0">
+                    <i class="material-icons" style="color: #fff; font-size: 2.5em">add_circle</i>
+                </md-button>
+            </div>
             <md-button ng-click="connection(tmpUsername)" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">
                 <i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>
             </md-button>
@@ -125,6 +131,55 @@
     </div>
 
 </div>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+    <md-toolbar style = "background-color:#452506; height:{{isLarge?8:9.5}}%" >
+        <h1 class="md-toolbar-tools">Sign in</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+        <form name="subscription">
+            <md-input-container>
+                <label>First name</label>
+                <input type="text" name="firstName"
+                       ng-model="signIn.firstName" required md-autofocus>
+                <div ng-messages="subscription.firstName.$error" style="color:red">
+                    <div ng-message="required" style="font-size: 0.65em">You may enter your first name</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Last name</label>
+                <input type="text" name="lastName"
+                       ng-model="signIn.lastName" required>
+                <div ng-messages="subscription.lastName.$error" style="color:red">
+                    <div ng-message="required" style="font-size: 0.65em">You may enter your last name</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Email</label>
+                <input type="email" name="email"
+                       ng-model="signIn.email" required>
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input type="password" name="password1"
+                       ng-model="signIn.password1">
+            </md-input-container>
+            <md-input-container>
+                <label>Password again</label>
+                <input type="password" name="password2"
+                       ng-model="signIn.password2">
+            </md-input-container>
+        </form>
+        <md-button ng-click="closeButton()" class="md-primary">
+            Cancel
+        </md-button>
+        <md-button ng-click="validate()" class="md-primary" ng-disabled="!(signIn.firstName && signIn.lastName && signIn.email && (signIn.password1 == signIn.password2) )">
+            Validate
+        </md-button>
+    </md-content>
+
+</md-sidenav>
 
 </body>
 
