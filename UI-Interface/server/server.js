@@ -501,6 +501,10 @@ router.post("/upload", function(req,res){
     // TODO : Allow images upload
 });
 
+router.post("/signin/:fname/:lname/:email/password",function(req,res){
+    nano.use('user').get(
+})
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));

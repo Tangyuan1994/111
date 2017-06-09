@@ -158,18 +158,31 @@
             <md-input-container>
                 <label>Email</label>
                 <input type="email" name="email"
-                       ng-model="signIn.email" required>
+                       ng-model="signIn.email" ng-pattern="regex" required>
+                <div ng-messages="subscription.email.$error">
+                    <div ng-message="email" style="font-size: 0.65em">This field must be a valid email address.</div>
+                    <div ng-message="required" style="font-size: 0.65em">You must have an email !</div>
+                </div>
+
             </md-input-container>
             <md-input-container>
                 <label>Password</label>
                 <input type="password" name="password1"
-                       ng-model="signIn.password1">
+                       ng-model="signIn.password1" required>
+                <div ng-messages="subscription.password1.$error" style="color: red">
+                    <div ng-message="required" style="font-size: 0.65em">You must have a password !</div>
+                </div>
             </md-input-container>
             <md-input-container>
                 <label>Password again</label>
                 <input type="password" name="password2"
-                       ng-model="signIn.password2">
+                       ng-model="signIn.password2" ng-pattern="{{signIn.password1}}" required>
+                <div ng-messages="subscription.password2.$error" style="color: red">
+                    <div ng-message="pattern" style="font-size: 0.65em">Passwords must be identical !</div>
+                    <div ng-message="required" style="font-size: 0.65em">You must confirm your password !</div>
+                </div>
             </md-input-container>
+
         </form>
         <md-button ng-click="closeButton()" class="md-primary">
             Cancel
