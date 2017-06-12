@@ -1,0 +1,164 @@
+<div style="text-align: start;">
+    <md-content style="padding: 15px">
+        <md-tabs md-dynamic-height>
+
+
+            <md-tab label="Mes informations">
+
+
+                <div>
+                    <h1> Informations Personnelles </h1>
+                    <md-divider></md-divider>
+                    <div layout-margin="">
+                        <br/><br/><br/>
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Nom: </span>
+                        {{user.fname}}
+                        <br/><br/><br/>
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Prénom: </span>
+                        {{user.name}}
+                        <br/><br/><br/>
+
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Adresse E-mail: </span>
+                        {{user.mail}}
+                        <br/><br/><br/>
+
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Mot de passe: </span>
+                        {{user.password}}
+                        <br/><br/><br/>
+
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Affiliation: </span>
+                        {{user.affiliation}}
+                        <br/><br/><br/>
+
+
+                        <span style="font-size: 1.4em;font-weight: 500"> Date d'inscription: </span>
+                        {{user.inscription}}
+                        <br/><br/><br/>
+                    </div>
+                </div>
+            </md-tab>
+
+
+            <md-tab label="Modifier mes informations">
+
+
+                <div>
+                    <h1> Informations Personnelles </h1>
+                    <md-divider></md-divider>
+                    <form name="modif">
+                        <div layout-margin="">
+
+                            <h3>Nom </h3>
+                            <div layout="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Nom</label>
+                                    <input ng-model="user.firstname" required type="text" name="firstName">
+                                    <div ng-messages="modif.firstName.$error" style="...">
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your first
+                                            name
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <h3>Prénom </h3>
+                            <div layout="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Prénom</label>
+                                    <input ng-model="user.lastName" required type="text" name="lastName">
+                                    <div ng-messages="modif.lastName.$error" style="...">
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your last
+                                            name
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <h3>Adresse e-mail </h3>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>e-mail</label>
+                                    <input ng-model="user.email" required type="email" name="email"
+                                           ng-pattern="/^.+@+.+\..+$/">
+                                    <div ng-messages="modif.email.$error">
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your e-mail
+                                        </div>
+                                        <div ng-message="pattern" style="font-size: 0.65em">This field must be a valid
+                                            email address.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <!--checker correspondances -->
+
+                            <h3>Ancien mot de passe </h3>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Ancien mot de passe</label>
+                                    <input ng-model="user.oldPwd" required type="text" name="oldPwd">
+                                    <div ng-messages="modif.oldPwd.$error" style="...">
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your old
+                                            password
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <h3>Nouveau mot de passe </h3>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Nouveau mot de passe</label>
+                                    <input ng-model="user.pwd1" required type="text" name="pwd1">
+                                    <div ng-messages="modif.pwd1.$error" style="...">
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your new
+                                            password
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <h3>Confirmation du nouveau mot de passe </h3>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Confirmation</label>
+                                    <input ng-model="user.pwd2" required type="text" name="pwd2"
+                                           ng-pattern="{{user.pwd1}}" required>
+                                    <div ng-messages="modif.pwd2.$error" style="...">
+                                        <div ng-message="pattern" style="font-size: 0.65em">Passwords must be identical
+                                            !
+                                        </div>
+                                        <div ng-message="required" style="font-size: 0.65em">You may enter your new
+                                            password
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+
+                            <h3>Affiliation </h3>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Affiliation</label>
+                                    <input ng-model="user.affil">
+                                </md-input-container>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

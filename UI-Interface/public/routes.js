@@ -269,6 +269,19 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
                     },
                     controller: 'SignInController'
                 })
+                .state('perso', {
+                    url: '/Perso',
+                    parent: 'site',
+                    params: {
+                        username: "",
+                        password: ""
+                    },
+                    templateUrl: 'perso/perso.html',
+                    data: {
+                        roles: ["Admin","SuperUser","Anonymous"]
+                    },
+                    controller: 'PersoController'
+                })
 
         }])
         .run(['$rootScope', '$state', '$stateParams',
