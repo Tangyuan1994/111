@@ -3,7 +3,7 @@
  */
 
 angular.module('daeNG')
-    .controller('IndexController', function ($scope,$mdMedia,$window, principal, $stateParams,$mdSidenav) {
+    .controller('IndexController', function ($scope,$mdMedia,$window, principal, $stateParams,$mdSidenav, $http, $log, $mdDialog) {
 
 /**
  ------------------------------------------------------------------
@@ -92,8 +92,59 @@ angular.module('daeNG')
                     $log.debug("close RIGHT is done");
                 });
         };
-        $scope.validate = function(){
 
+        $scope.error = false;
+
+        $scope.showAlert = function(ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            // Modal dialogs should fully cover application
+            // to prevent interaction outside of dialog
+            $mdDialog.show(
+                $mdDialog.alert()
+                    .parent(angular.element(document.querySelector('#popupContainer')))
+                    .clickOutsideToClose(true)
+                    .title('This is an alert title')
+                    .textContent('You can specify some description text in here.')
+                    .ariaLabel('Alert Dialog Demo')
+                    .ok('Got it!')
+                    .targetEvent(ev)
+            );
+        };
+
+        $scope.validate = function(){
+            var fname = $scope.signIn.firstName;
+            var lname = $scope.signIn.lastName;
+            var email = $scope.signIn.email;
+            var password = $scope.signIn.password2;
+            $http({
+                method: 'GET',
+                url: '/signin/' + fname + '/'+ lname +'/'+ email +'/'+ password
+            }).then(function successCallback(response) {
+                console.log(response)
+                if (response.data == 200){
+                    $scope.error = false
+                    $mdSidenav('right').close()
+                        .then(function () {
+                            $log.debug("close RIGHT is done");
+                        });
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                            .parent(angular.element(document.querySelector('#popupContainer')))
+                            .clickOutsideToClose(true)
+                            .title('Registration confirmation')
+                            .textContent('Your registration have been made with success' )
+                            .ariaLabel('Alert Dialog Demo')
+                            .ok('ok')
+                            .targetEvent()
+                    );
+                } else if (response.data == 409){
+                    $scope.error = true
+                } else {
+
+                }
+            }, function errorCallback(err) {
+                console.log(err)
+            });
         };
 
         function buildToggler(navID) {
@@ -106,6 +157,4 @@ angular.module('daeNG')
                     });
             };
         }
-
-
     });

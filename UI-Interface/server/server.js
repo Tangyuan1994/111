@@ -328,6 +328,8 @@ router.post('/init', function(req,res){
 
 
 router.get('/datasets/:id', function(req,res){
+
+
     // Get all data
     if (req.params.id == "all" || req.params.id == ''){
 
@@ -513,11 +515,11 @@ router.post("/upload", function(req,res){
 });
 
 
-router.post("/signin/:fname/:lname/:email/:password",function(req,res) {
+router.get("/signin/:fname/:lname/:email/:password",function(req,res) {
     var email = req.params.email
     var mapEmails = "function(doc){"+
         "if (doc.email == '"+email+"'){"+
-            "emit(doc._id,{'email':doc.email})"+
+            "emit(doc._id,doc.email)"+
         "}"+
     "};"
     nano.use('user').insert({
@@ -530,12 +532,17 @@ router.post("/signin/:fname/:lname/:email/:password",function(req,res) {
         }
     }, function (err, body) {
         if (err) {
+            //console.log("err problème")
             console.log(err)
         } else {
             console.log(body)
             nano.use('user').view('emails','coucou', function (err, body) {
+                console.log("err",err)
+                console.log("body",body)
+                console.log("body-len",body.length)
                 if (!err) {
-                    if (!(body.length > 0)) {
+                    if (!(body.rows.length > 0)) { //S'il n'existe pas déjà cette adresse dans CouchDB
+                        res.json(200)
                         nano.use('user').insert({
                             "fname": req.params.fname,
                             "lname": req.params.lname,
@@ -546,30 +553,17 @@ router.post("/signin/:fname/:lname/:email/:password",function(req,res) {
                                 console.log(err);
                             } else {
                                 console.log("Il n'y a pas d'erreur !");
+                                console.log(res)
                                 nano.use('user').get("_design/emails", function (err, body) {
-                                    console.log(body)
                                     if (err) {
                                         console.log(err)
                                     } else {
                                         nano.use('user').destroy("_design/emails", body._rev, function (err, body) {
                                             if (err) {
-                                                console.log("Je n'ai pas detruit la view : ", err)
+                                                console.log("Je n'ai pas détruit la view : ", err)
                                             } else {
                                                 console.log("La view est bien détruite : ", body)
-                                                nano.use('user').get("_design/emails", function (err, body) {
-                                                    console.log(body)
-                                                    if (err) {
-                                                        console.log(err)
-                                                    } else {
-                                                        nano.use('user').destroy("_design/emails", body._rev, function (err, body) {
-                                                            if (err) {
-                                                                console.log("Je n'ai pas detruit la view : ", err)
-                                                            } else {
-                                                                console.log("La view est bien détruite : ", body)
-                                                            }
-                                                        });
-                                                    }
-                                                });
+
                                             }
                                         });
                                     }
@@ -577,7 +571,22 @@ router.post("/signin/:fname/:lname/:email/:password",function(req,res) {
                             }
                         });
                     } else {
+                        res.json(409)
                         console.log("Cette adresse exite deja dans la base");
+                        nano.use('user').get("_design/emails", function (err, body) {
+                            if (err) {
+                                console.log(err)
+                            } else {
+                                nano.use('user').destroy("_design/emails", body._rev, function (err, body) {
+                                    if (err) {
+                                        console.log("Je n'ai pas détruit la view : ", err)
+                                    } else {
+                                        console.log("La view est bien détruite : ", body)
+
+                                    }
+                                });
+                            }
+                        });
                     }
 
                 } else {
