@@ -23,7 +23,7 @@ angular.module('daeNG')
                 console.log(response.data);
                 $scope.rates = [];
                 $scope.tags = [];
-                $scope.browsedImages = [{"value":{}}];
+                $scope.browsedImages = [{"value": {}}];
                 $scope.browsedImages[0].value.image = response.data.image;
                 console.log("L'image d'ID " + id + " a été récupérée !")
             }, function errorCallback(response) {
@@ -31,35 +31,35 @@ angular.module('daeNG')
             });
         };
 
-        $scope.addView = function(){
+        $scope.addView = function () {
             $http({
                 method: 'POST',
                 url: 'add/view'
             })
         };
 
-        $scope.initBDD = function(){
+        $scope.initBDD = function () {
             $http({
                 method: 'POST',
                 url: 'init'
             })
         };
 
-        $scope.initBDDImages = function(){
+        $scope.initBDDImages = function () {
             $http({
                 method: 'POST',
                 url: 'initBDDImages'
             })
         };
 
-        $scope.initES = function(){
+        $scope.initES = function () {
             $http({
-                method:'POST',
+                method: 'POST',
                 url: 'initES'
             })
         };
 
-        $scope.deleteES = function(){
+        $scope.deleteES = function () {
             $http({
                 method: 'POST',
                 url: 'deleteES'
@@ -81,7 +81,7 @@ angular.module('daeNG')
                 url: '/document/' + id + '/getTags'
             }).then(function successCallback(response) {
                 console.log(response.data);
-                $scope.browsedImages = [{"value":{}}];
+                $scope.browsedImages = [{"value": {}}];
                 $scope.rates = [];
                 $scope.tags = response.data.tags;
                 console.log("Le tableau de tags de l'ID " + id + " a été récupéré !")
@@ -97,7 +97,7 @@ angular.module('daeNG')
                 url: '/document/' + id + '/getRates'
             }).then(function successCallback(response) {
                 console.log(response.data);
-                $scope.browsedImages = [{"value":{}}];
+                $scope.browsedImages = [{"value": {}}];
                 $scope.tags = [];
                 $scope.rates = response.data.rates;
                 console.log("Le tableau de notes de l'ID " + id + " a été récupéré !")
@@ -111,13 +111,28 @@ angular.module('daeNG')
             var tag = "test3";
             $http({
                 method: 'POST',
-                url: '/document/' + id + '/adds/' + tag
+                url: '/document/' + id + '/addTag/' + tag
             }).then(function successCallback(response) {
                 console.log(response.data);
             }, function errorCallback(response) {
                 console.log(response)
             });
         };
+
+        $scope.addRates = function () {
+            console.log("entree");
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            var rate = 56;
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/addRate/' + rate
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
 
         $scope.modifyTag = function () {
             var id = "5330e2f3a0dd8ee433e3e702df012c19";
@@ -125,7 +140,7 @@ angular.module('daeNG')
             var tag2 = "Test4";
             $http({
                 method: 'POST',
-                url: '/document/' + id + '/modify/' + tag1 + '/' + tag2
+                url: '/document/' + id + '/modifyTag/' + tag1 + '/' + tag2
             }).then(function successCallback(response) {
                 console.log(response.data);
             }, function errorCallback(response) {
@@ -133,12 +148,40 @@ angular.module('daeNG')
             });
         };
 
+        $scope.modifyRates = function () {
+            var id = "5330e2f3a0dd8ee433e3e702df012c19";
+            var rate1 = 56;
+            var rate2 = 0;
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/modifyRate/' + rate1 +'/' + rate2
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+
+        };
+
         $scope.deleteTag = function () {
             var id = "5330e2f3a0dd8ee433e3e702df012c19";
             var tag = "Test3";
             $http({
                 method: 'POST',
-                url: '/document/' + id + '/delete/' + tag
+                url: '/document/' + id + '/deleteTag/' + tag
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        };
+
+        $scope.deleteRate = function () {
+            var id ="5330e2f3a0dd8ee433e3e702df012c19";
+            var rate = "56";
+            $http({
+                method: 'POST',
+                url: '/document/' + id + '/deleteRate/' + rate
             }).then(function successCallback(response) {
                 console.log(response.data);
             }, function errorCallback(response) {

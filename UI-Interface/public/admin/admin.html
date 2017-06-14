@@ -13,6 +13,11 @@
                 <md-button ng-click="addView()">Add a new view</md-button>
                 <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
                 <md-button ng-click="initBDDImages()">Initialisation de la Base de Données Images</md-button>
+                <md-button ng-click="addRates()">Add one rate</md-button>
+                <md-button ng-click="modifyRates()">Modify a rate</md-button>
+                <md-button ng-click="deleteRate()">Delete a rate</md-button>
+
+
                 <div ng-repeat="data in browsedImages">
                     <img ng-src="data:image/png;base64,{{data.value.image}}">
                 </div>

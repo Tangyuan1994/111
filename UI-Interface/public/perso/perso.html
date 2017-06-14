@@ -3,7 +3,10 @@
         <md-tabs md-dynamic-height>
 
 
-            <md-tab label="Mes informations">
+            <md-tab label="Mes informations" ng-click="update()">
+
+
+                <!--            Créer getter pour ici           -->
 
 
                 <div>
@@ -13,11 +16,12 @@
                         <br/><br/><br/>
 
                         <span style="font-size: 1.4em;font-weight: 500"> Nom: </span>
-                        {{user.fname}}
+                        {{user.lname}}
+
                         <br/><br/><br/>
 
                         <span style="font-size: 1.4em;font-weight: 500"> Prénom: </span>
-                        {{user.name}}
+                        {{user.fname}}
                         <br/><br/><br/>
 
 
@@ -27,7 +31,7 @@
 
 
                         <span style="font-size: 1.4em;font-weight: 500"> Mot de passe: </span>
-                        {{user.password}}
+                        {{user.passWord}}
                         <br/><br/><br/>
 
 
@@ -53,43 +57,59 @@
                     <form name="modif">
                         <div layout-margin="">
 
-                            <h3>Nom </h3>
+                            <span style="font-size: 1.4em; font-weight: 500">Nom </span>
+                            <div style="text-align: end">
+                                <md-button class="md-raised md-primary val-button" ng-click="modifyLname()"
+                                           ng-disabled="user.lastname==null || user.lastname.length<1">Validate
+                                </md-button>
+                            </div>
                             <div layout="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>Nom</label>
-                                    <input ng-model="user.firstname" required type="text" name="firstName">
-                                    <div ng-messages="modif.firstName.$error" style="...">
+                                    <input ng-model="user.lastname" type="text" name="lastname">
+                                    <!--<div ng-messages="modif.firstName.$error" style="...">
                                         <div ng-message="required" style="font-size: 0.65em">You may enter your first
                                             name
                                         </div>
-                                    </div>
+                                    </div>-->
+
                                 </md-input-container>
                             </div>
 
 
-                            <h3>Prénom </h3>
+                            <span style="font-size: 1.4em; font-weight: 500">Prénom </span>
+                            <div style="text-align: end">
+                                <md-button class="md-raised md-primary val-button" ng-click="modifyFname()"
+                                           ng-disabled="user.firstname==null || user.firstname.length<1">Validate
+                                </md-button>
+                            </div>
                             <div layout="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>Prénom</label>
-                                    <input ng-model="user.lastName" required type="text" name="lastName">
-                                    <div ng-messages="modif.lastName.$error" style="...">
-                                        <div ng-message="required" style="font-size: 0.65em">You may enter your last
-                                            name
-                                        </div>
-                                    </div>
+                                    <input ng-model="user.firstname" type="text" name="firstname">
+                                    <!-- <div ng-messages="modif.lastName.$error" style="...">
+                                         <div ng-message="required" style="font-size: 0.65em">You may enter your last
+                                             name
+                                         </div>
+                                     </div>-->
                                 </md-input-container>
                             </div>
 
 
-                            <h3>Adresse e-mail </h3>
+                            <span style="font-size: 1.4em; font-weight: 500">Adresse e-mail </span>
+                            <div style="text-align: end">
+                                <md-button class="md-raised md-primary val-button" ng-click="modifyMail() "
+                                           ng-disabled="!user.email ">Validate
+                                </md-button>
+                            </div>
                             <div layout-gt-sm="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>e-mail</label>
-                                    <input ng-model="user.email" required type="email" name="email"
+                                    <input ng-model="user.email" type="email" name="email"
                                            ng-pattern="/^.+@+.+\..+$/">
                                     <div ng-messages="modif.email.$error">
-                                        <div ng-message="required" style="font-size: 0.65em">You may enter your e-mail
-                                        </div>
+                                        <!-- <div ng-message="required" style="font-size: 0.65em">You may enter your e-mail
+                                         </div>-->
                                         <div ng-message="pattern" style="font-size: 0.65em">This field must be a valid
                                             email address.
                                         </div>
@@ -100,57 +120,79 @@
 
                             <!--checker correspondances -->
 
-                            <h3>Ancien mot de passe </h3>
+
+                            <span style="font-size: 1.5em; font-weight: 800">Changement de mot de passe  </span>
+
+                            <br/><br/><br/>
+
+
+                            <span style="font-size: 1.3em; font-weight: 400">Ancien mot de passe  </span>
                             <div layout-gt-sm="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>Ancien mot de passe</label>
-                                    <input ng-model="user.oldPwd" required type="text" name="oldPwd">
+                                    <input ng-model="user.oldPwd" type="password" name="oldPwd" ng-pattern="{{user.passWord}}">
                                     <div ng-messages="modif.oldPwd.$error" style="...">
-                                        <div ng-message="required" style="font-size: 0.65em">You may enter your old
-                                            password
+                                        <div ng-message="pattern" style="font-size: 0.65em"> This is a wrong password
                                         </div>
                                     </div>
                                 </md-input-container>
                             </div>
 
+                            <!--<div ng-show="user.oldPwd est vérifié ">-->
 
-                            <h3>Nouveau mot de passe </h3>
+
+                            <span style="font-size: 1.3em; font-weight: 400">Nouveau mot de passe  </span>
                             <div layout-gt-sm="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>Nouveau mot de passe</label>
-                                    <input ng-model="user.pwd1" required type="text" name="pwd1">
-                                    <div ng-messages="modif.pwd1.$error" style="...">
-                                        <div ng-message="required" style="font-size: 0.65em">You may enter your new
+                                    <input ng-model="user.pwd1" type="password" name="pwd1">
+                                    <!--<div ng-messages="modif.pwd1.$error" style="...">
+                                        &lt;!&ndash;<div ng-message="required" style="font-size: 0.65em">You may enter your new
                                             password
-                                        </div>
-                                    </div>
+                                        </div>&ndash;&gt;
+                                    </div>-->
                                 </md-input-container>
                             </div>
 
+                            <!--</div>-->
 
-                            <h3>Confirmation du nouveau mot de passe </h3>
-                            <div layout-gt-sm="row">
-                                <md-input-container class="md-block" flex-gt-sm>
-                                    <label>Confirmation</label>
-                                    <input ng-model="user.pwd2" required type="text" name="pwd2"
-                                           ng-pattern="{{user.pwd1}}" required>
-                                    <div ng-messages="modif.pwd2.$error" style="...">
-                                        <div ng-message="pattern" style="font-size: 0.65em">Passwords must be identical
-                                            !
+                            <div ng-show="user.pwd1.length > 0">
+                                <span style="font-size: 1.3em; font-weight: 400">Confirmation du nouveau mot de passe  </span>
+                                <div style="text-align: end">
+                                    <md-button class="md-raised md-primary val-button" ng-click="modifyPwd() "
+                                               ng-disabled="(user.pwd1!=user.pwd2) || user.oldPwd!=user.passWord">Validate
+                                    </md-button>
+                                </div>
+                                <div layout-gt-sm="row">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Confirmation</label>
+                                        <input ng-model="user.pwd2" type="password" name="pwd2"
+                                               ng-pattern="{{user.pwd1}}">
+                                        <div ng-messages="modif.pwd2.$error" style="...">
+                                            <div ng-message="pattern" style="font-size: 0.65em">Passwords must be
+                                                identical!
+                                            </div>
+                                            <!-- <div ng-message="required" style="font-size: 0.65em">You may enter your new
+                                                 password
+                                             </div>-->
                                         </div>
-                                        <div ng-message="required" style="font-size: 0.65em">You may enter your new
-                                            password
-                                        </div>
-                                    </div>
-                                </md-input-container>
+                                    </md-input-container>
+                                </div>
                             </div>
 
 
-                            <h3>Affiliation </h3>
+                            <span style="font-size: 1.4em; font-weight: 500">Affiliation </span>
+                            <div style="text-align: end">
+                                <md-button class="md-raised md-primary val-button" type="text" ng-click="modifyAff()"
+                                           ng-disabled="user.aff==null || user.aff.length<1 ">
+                                    Validate
+                                </md-button>
+                            </div>
+
                             <div layout-gt-sm="row">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <label>Affiliation</label>
-                                    <input ng-model="user.affil">
+                                    <input ng-model="user.aff" type="text" name="aff">
                                 </md-input-container>
 
 
