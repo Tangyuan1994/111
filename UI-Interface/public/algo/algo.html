@@ -1,3 +1,125 @@
-<md-content style="padding: 15px">
-    Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
-</md-content>
+<div ng-controller="AlgoController as ctrl" layout="column" ng-cloak>
+    <md-content class="md-padding">
+        <form ng-submit="$event.preventDefault()" >
+            <h1> Customized queries </h1>
+            <md-divider></md-divider>
+            <div style="width: 50%">
+                <div layout="row" layout-margin="">
+                    <h3 >Filters on the page images</h3>
+                </div>
+                <div layout="row" >
+                    <p flex-offset="5">Choose the type of the page images : </p>
+                </div>
+                <div layout="row">
+                    <md-autocomplete flex="40" flex-offset="5"
+                                     md-selected-item="selectedItem1"
+                                     md-items="item in querySearchTypes(searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Choose the type">
+                        <md-item-template>
+                            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br/>
+                <div layout="row">
+                    <p flex-offset="5">Choose the dataset of the page images :  </p>
+                </div>
+                <div layout="row" >
+                    <md-autocomplete flex="40" flex-offset="5"
+                                     md-selected-item="selectedItem2"
+                                     md-items="item in querySearchDataset(searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Choose the dataset">
+                        <md-item-template>
+                            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br/>
+                <div layout="row" layout-margin="">
+                    <h3 >Filters on the page elements</h3>
+                </div>
+                <div layout="row" >
+                    <p flex-offset="5">Choose the type of the page elements contained in the page images : </p>
+                </div>
+                <div layout="row" >
+                    <md-autocomplete flex="40" flex-offset="5"
+                                     md-selected-item="selectedItem3"
+                                     md-items="item in querySearchDataset(searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Choose the type">
+                        <md-item-template>
+                            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br/>
+                <div layout="row" >
+                    <p flex-offset="5">Choose the data type property of the page elements contained in the page images :</p>
+                </div>
+                <div layout="row"  >
+                    <md-autocomplete flex="40" flex-offset="5"
+                                     md-selected-item="selectedItem4"
+                                     md-items="item in querySearchDataset(searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Choose the data type property">
+                        <md-item-template>
+                            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br/>
+                <div layout="row"  >
+                    <p flex-offset="5">Choose the value contained in the page elements of the page images : </p>
+                </div>
+                <div layout="row"  >
+                    <md-autocomplete flex="40" flex-offset="5"
+                                     md-selected-item="selectedItem5"
+                                     md-items="item in querySearchDataset(searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Choose the value">
+                        <md-item-template>
+                            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br/>
+                <div layout="row" layout-align="end center" layout-margin="">
+                    <md-button ng-click="cancel()" aria-label="cancel" class="md-accent md-raised">
+                        Cancel
+                    </md-button>
+                    <md-button ng-click="submitQuerie()" aria-label="Submit querie" class="md-accent md-raised">
+                        Submit querie
+                    </md-button>
+
+                </div>
+            </div>
+        </form>
+    </md-content>
+</div>

@@ -136,6 +136,8 @@
 
 </div>
 
+<!-- Sidenav-->
+
 <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
     <md-toolbar style = "background-color:#452506; height:{{isLarge?8:9.5}}%" >
@@ -203,6 +205,10 @@
         <md-button ng-click="validate()" class="md-primary" ng-disabled="!(signIn.firstName && signIn.lastName && signIn.email && (signIn.password1 == signIn.password2) )">
             Validate
         </md-button>
+        <div ng-show="error" style="color: red">
+            This email address is already used
+        </div>
+
     </md-content>
 
 </md-sidenav>

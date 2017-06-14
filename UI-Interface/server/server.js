@@ -340,9 +340,9 @@ router.get('/datasets/:id', function(req,res){
         var mapStr = map.toString();
 
         // Authentification
-        nano.auth(username, password,function (err, response, headers) {
+        /*nano.auth(username, password,function (err, response, headers) {
             cookies = headers['set-cookie'];
-            nano.config.cookie = headers['set-cookie'];
+            nano.config.cookie = headers['set-cookie'];*/
 
             // Create view
             nano.use('images').insert({
@@ -386,7 +386,7 @@ router.get('/datasets/:id', function(req,res){
                     }
                 }
             );
-        });
+        //});
     } else {
 
         // Get image with id ...
@@ -421,6 +421,7 @@ router.get("/document/:id/getRates", function(req,res){
         if (!err) {
             res.json(body);
             console.log(body.rates);
+
         }
     });
 });
