@@ -6,6 +6,8 @@ angular.module('daeNG')
                 method: 'GET',
                 url: '/datasets/all'
             }).then(function successCallback(response) {
+                $scope.rates = [];
+                $scope.tags = [];
                 $scope.browsedImages = response.data.rows;
                 console.log($scope.browsedImages)
 
@@ -96,6 +98,7 @@ angular.module('daeNG')
                 method: 'GET',
                 url: '/document/' + id + '/getRates'
             }).then(function successCallback(response) {
+                //console.log("Get Rates")
                 console.log(response.data);
                 $scope.browsedImages = [{"value": {}}];
                 $scope.tags = [];
@@ -188,6 +191,12 @@ angular.module('daeNG')
                 console.log(response)
             });
         };
+
+        $scope.connectSsh = function () {
+            var username = "cpineau"
+            var privateKey = ""
+
+        }
 
 
 
