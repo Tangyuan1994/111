@@ -12,8 +12,6 @@ angular.module('daeNG')
         $scope.user = {};
 
 
-
-
         $scope.getLname = function () {
             var id = "1a";
             $http({
@@ -27,9 +25,6 @@ angular.module('daeNG')
                 console.log(response)
             });
         };
-
-
-
 
 
         $scope.getFname = function () {
@@ -88,16 +83,14 @@ angular.module('daeNG')
             });
         };
 
-        $scope.getInsc = function () {
-
+        $scope.getDate = function () {
             var id = "1a";
-            console.log("salut");
             $http({
                 method: 'GET',
-                url: '/perso/' + id + '/getInsc'
+                url: '/perso/' + id + '/getDate'
             }).then(function successCallback(response) {
                 console.log(response.data);
-                $scope.user.inscription = response.data.inscription;
+                $scope.user.date = response.data.date.substring(0,16);
                 console.log("Le tableau de inscription " + id + " a été récupéré !")
             }, function errorCallback(response) {
                 console.log(response)
@@ -107,20 +100,9 @@ angular.module('daeNG')
         $scope.getLname();
         $scope.getFname();
         $scope.getMail();
-        $scope.getAff();
         $scope.getPwd();
-
-
-$scope.update = function() {
-
-    $scope.getLname();
-    $scope.getFname();
-    $scope.getMail();
-    $scope.getAff();
-    $scope.getPwd();
-
-
-}
+        $scope.getAff();
+        $scope.getDate();
 
 
 
@@ -135,7 +117,7 @@ $scope.update = function() {
             }, function errorCallback(response) {
                 console.log(response)
             });
-            $scope.user.lastname="";
+            $scope.user.lastname = "";
 
         };
 
@@ -150,7 +132,7 @@ $scope.update = function() {
             }, function errorCallback(response) {
                 console.log(response)
             });
-            $scope.user.firstname="";
+            $scope.user.firstname = "";
         };
 
 
@@ -165,7 +147,7 @@ $scope.update = function() {
             }, function errorCallback(response) {
                 console.log(response)
             });
-            $scope.user.email="";
+            $scope.user.email = "";
         };
 
         $scope.modifyAff = function () {
@@ -179,7 +161,7 @@ $scope.update = function() {
             }, function errorCallback(response) {
                 console.log(response)
             });
-            $scope.user.aff="";
+            $scope.user.aff = "";
         };
 
         $scope.modifyPwd = function () {
@@ -194,9 +176,19 @@ $scope.update = function() {
             }, function errorCallback(response) {
                 console.log(response)
             });
-            $scope.user.pwd1="";
-            $scope.user.pwd2="";
-            //$scope.user.oldPwd="";
+            $scope.user.pwd1 = "";
+            $scope.user.pwd2 = "";
+            $scope.user.oldPwd="";
+        };
+
+
+        $scope.update = function () {
+
+            $scope.getLname();
+            $scope.getFname();
+            $scope.getMail();
+            $scope.getAff();
+            $scope.getPwd();
         };
 
 

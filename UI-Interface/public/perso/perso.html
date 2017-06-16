@@ -41,7 +41,7 @@
 
 
                         <span style="font-size: 1.4em;font-weight: 500"> Date d'inscription: </span>
-                        {{user.inscription}}
+                        {{user.date}}
                         <br/><br/><br/>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
 
                             <!--</div>-->
 
-                            <div ng-show="user.pwd1.length > 0">
+                            <div ng-show="user.pwd1.length > 0" >
                                 <span style="font-size: 1.3em; font-weight: 400">Confirmation du nouveau mot de passe  </span>
                                 <div style="text-align: end">
                                     <md-button class="md-raised md-primary val-button" ng-click="modifyPwd() "

@@ -10,22 +10,56 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
+
+var SSH = require('simple-ssh');
+var ssh = new SSH({
+    host: 'localhost:8008',
+    user: 'username',
+    pass: 'password'
+});
+
+ssh.exec('echo $PATH', {
+    err: (        function (stderr) {
+            console.log(stderr);
+            console.log("err");
+        }
+    )
+
+    //     function (err) {
+    //     console.log("erreur")
+    // }
+    ,
+    /*    out: console.log("out"),
+     in: console.log("in")*/
+
+
+    out: (        function (stdout) {
+            console.log(stdout);
+            console.log("out");
+        }
+    )
+}).start();
+
+
 //Required by ElasticSearch
-// var elasticsearch = require('elasticsearch');
-// var client = new elasticsearch.Client({
-//     host: 'localhost:9200',
-//     log: 'trace'
-// });
-//
-// client.ping({
-//     requestTimeout: 30000,
-// }, function (error) {
-//     if (error) {
-//         console.error('elasticsearch cluster is down!');
-//     } else {
-//         console.log('All is well');
-//     }
-// });
+/*var elasticsearch = require('elasticsearch');
+ var client = new elasticsearch.Client({
+ host: 'localhost:9200',
+ log: 'trace'
+ });
+
+ client.ping({
+ requestTimeout: 30000,
+ }, function (error) {
+ if (error) {
+ console.error('elasticsearch cluster is down!');
+ } else {
+ console.log('All is well');
+ }
+ });*/
+
+
+
 
 // Required by CouchDB
 var nano = require('nano')('http://127.0.0.1:5984/');
@@ -358,51 +392,51 @@ router.get('/datasets/:id', function (req, res) {
 
         // Authentification
         /*nano.auth(username, password, function (err, response, headers) {
-            cookies = headers['set-cookie'];
-            nano.config.cookie = headers['set-cookie'];*/
+         cookies = headers['set-cookie'];
+         nano.config.cookie = headers['set-cookie'];*/
 
-            // Create view
-            nano.use('images').insert({
-                    "_id": "_design/view-all",
-                    "language": "javascript",
-                    "views": {
-                        "default": {
-                            "map": mapStr
-                        }
-                    }
-                }, function (err, body) {
-                    if (err) {
-                        console.log(err)
-                    } else {
-
-                        // Get Images
-                        nano.use('images').view('view-all', 'default', function (err, body) {
-                            if (!err) {
-                                res.json(body)
-                                console.log(body)
-
-                                // Delete view
-                                nano.use('images').get("_design/view-all", function (err, body) {
-                                    if (err) {
-                                        console.log(err)
-                                    } else {
-                                        nano.use('images').destroy("_design/view-all", body._rev, function (err, body) {
-                                            if (err) {
-                                                console.log("Je n'ai pas detruit la view : ", err)
-                                            } else {
-                                                console.log("La view est bien détruite : ", body)
-                                            }
-                                        })
-                                    }
-                                })
-                            } else {
-                                console.log(err)
-                            }
-                        })
-                        console.log(body)
+        // Create view
+        nano.use('images').insert({
+                "_id": "_design/view-all",
+                "language": "javascript",
+                "views": {
+                    "default": {
+                        "map": mapStr
                     }
                 }
-            );
+            }, function (err, body) {
+                if (err) {
+                    console.log(err)
+                } else {
+
+                    // Get Images
+                    nano.use('images').view('view-all', 'default', function (err, body) {
+                        if (!err) {
+                            res.json(body)
+                            console.log(body)
+
+                            // Delete view
+                            nano.use('images').get("_design/view-all", function (err, body) {
+                                if (err) {
+                                    console.log(err)
+                                } else {
+                                    nano.use('images').destroy("_design/view-all", body._rev, function (err, body) {
+                                        if (err) {
+                                            console.log("Je n'ai pas detruit la view : ", err)
+                                        } else {
+                                            console.log("La view est bien détruite : ", body)
+                                        }
+                                    })
+                                }
+                            })
+                        } else {
+                            console.log(err)
+                        }
+                    })
+                    console.log(body)
+                }
+            }
+        );
         //});
     } else {
 
@@ -693,7 +727,7 @@ router.get('/', function (req, res, next) {
 });
 
 
-/* PAGE "PERSO" */
+/**********     PAGE "PERSO"    **********/
 
 
 
@@ -712,7 +746,7 @@ router.get("/perso/:id/getLname", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-          //  console.log(body.lname);
+            console.log("lastname : " + body.lname);
         }
     });
 });
@@ -721,7 +755,7 @@ router.get("/perso/:id/getFname", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.fname);
+            console.log("firstname : " + body.fname);
         }
     });
 });
@@ -730,7 +764,7 @@ router.get("/perso/:id/getMail", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.mail);
+            console.log("mail: " + body.mail);
         }
     });
 });
@@ -739,7 +773,7 @@ router.get("/perso/:id/getPwd", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.passWord);
+            console.log("password: " + body.passWord);
         }
     });
 });
@@ -748,22 +782,19 @@ router.get("/perso/:id/getAff", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.affiliation);
+            console.log("affiliation: " + body.affiliation);
         }
     });
 });
 
-router.get("/perso/:id/getInsc", function (req, res) {
+router.get("/perso/:id/getDate", function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.inscription);
+            console.log("date: " + body.date.substring(0,3));
         }
     });
 });
-
-
-
 
 
 router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
@@ -771,13 +802,13 @@ router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.lname);
-            console.log(req.params.lastname);
+           // console.log(body.lname);
+            //console.log(req.params.lastname);
             if (req.params.lastname.length > 0) {
                 body.lname = req.params.lastname;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                        console.log("Reussite")
+                       // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -794,13 +825,13 @@ router.post('/perso/:id/modifyFname/:firstname', function (req, res) {
     nano.use('user').get('1a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(req.params.firstname);
-            console.log(body.fname);
+           // console.log(req.params.firstname);
+            //console.log(body.fname);
             if (req.params.firstname.length > 0) {
                 body.fname = req.params.firstname;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                        console.log("Reussite")
+                       // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -816,12 +847,12 @@ router.post('/perso/:id/modifyMail/:mail', function (req, res) {
 //    nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.mail);
+           // console.log(body.mail);
             if (req.params.mail.length > 0) {
                 body.mail = req.params.mail;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                        console.log("Reussite")
+                      //  console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -837,12 +868,12 @@ router.post('/perso/:id/modifyAffil/:affil', function (req, res) {
         //nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.affiliation);
+           // console.log(body.affiliation);
             if (req.params.affil.length > 0) {
                 body.affiliation = req.params.affil;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                        console.log("Reussite")
+                       // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -858,23 +889,26 @@ router.post('/perso/:id/modifyPwd/:old/:pwd', function (req, res) {
         // nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
-            console.log(body.passWord);
+            //console.log(body.passWord);
             if (body.passWord == req.params.old) {
                 if (req.params.pwd.length > 0) {
                     body.passWord = req.params.pwd;
                     nano.use('user').insert(body, function (err, body) {
                         if (!err) {
-                            console.log("Reussite")
+                          //  console.log("Reussite")
                         } else {
                             console.log(err);
                         }
                     });
                 }
             }
-            else { console.log("Mauvais MDP")}
+            else {
+                console.log("Mauvais MDP")
+            }
         }
 
     })
 });
+
 
 module.exports = router;
