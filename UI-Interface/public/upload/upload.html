@@ -1,52 +1,96 @@
 <md-content style="padding: 15px; height:100%" layout="column">
 
-    <div flex="20">
-        Path :
-        <input type="text" name="path" ng-model="dataUpload.path">
-        {{dataUpload.path}}
-    </div>
+    <md-tabs>
+        <md-tab label="Upload">
 
-    <div flex="20">
-        Type :
-        <md-input-container>
-            <label>Type :</label>
-            <input type="text" name="type" ng-model="dataUpload.type">
-        </md-input-container>
-        {{dataUpload.type}}
+            <br>
+            </br>
+            <div flex="20">
+                Path :
+                <md-input-container>
+                    <label>Path :</label>
+                <input type="text" name="path" ng-model="dataUpload.path">
+                </md-input-container>
+                {{dataUpload.path}}
+            </div>
 
-    </div>
+            <div flex="20">
+                Type :
+                <md-input-container>
+                    <label>Type :</label>
+                    <input type="text" name="type" ng-model="dataUpload.type">
+                </md-input-container>
+                {{dataUpload.type}}
 
-    <div flex="20">
-        Name :
-        <md-input-container>
-            <label>Name :</label>
-            <input type="text" name="name" ng-model="dataUpload.name">
-        </md-input-container>
-        {{dataUpload.name}}
-    </div>
+            </div>
 
-    <div flex="20">
-        <md-autocomplete md-selected-item="dataUpload.country"
-                         md-items="item in test"
-                         md-item-text="item"
-                         md-min-length="0"
-                         placeholder="Choose a country">
-            <md-item-template>
-                <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
-            </md-item-template>
-            <md-not-found>
-                No states matching "{{searchText}}" were found.
-                <!--<a ng-click="newState(searchText)">Create a new one!</a>-->
-            </md-not-found>
-        </md-autocomplete>
-    </div>
+            <div flex="20">
+                Name :
+                <md-input-container>
+                    <label>Name :</label>
+                    <input type="text" name="name" ng-model="dataUpload.name">
+                </md-input-container>
+                {{dataUpload.name}}
+            </div>
 
-    <div flex="10">
+            <div flex="20">
+                <md-autocomplete md-selected-item="dataUpload.country"
+                                 md-items="item in test"
+                                 md-item-text="item"
+                                 md-min-length="0"
+                                 placeholder="Choose a country">
+                    <md-item-template>
+                        <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No states matching "{{searchText}}" were found.
+                        <!--<a ng-click="newState(searchText)">Create a new one!</a>-->
+                    </md-not-found>
+                </md-autocomplete>
+            </div>
 
-    </div>
+            <div flex="10">
 
-    <div flex="10">
-        <md-button ng-click="testEnvoi()">Validate</md-button>
-    </div>
+            </div>
+
+            <div flex="10">
+                <md-button ng-click="testEnvoi()">Validate</md-button>
+            </div>
+
+        </md-tab>
+        <md-tab label="Modify">
+
+            <br>
+            </br>
+
+            <div flex="20">
+                Please input the id :
+                <md-input-container>
+                    <label>ID :</label>
+                    <input type="text" name="id" ng-model="dataModified.id">
+                </md-input-container>
+                {{dataModified.id}}
+            </div>
+
+
+
+            <div flex="20">
+                New Name :
+                <md-input-container>
+                    <label>New Name :</label>
+                    <input type="text" name="newname" ng-model="dataModified.newname">
+                </md-input-container>
+                {{dataModified.newname}}
+            </div>
+
+            <div flex="10">
+                <md-button ng-click="modification()">Modification</md-button>
+            </div>
+
+
+        </md-tab>
+    </md-tabs>
+
+
 
 </md-content>

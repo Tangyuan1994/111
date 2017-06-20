@@ -41,6 +41,9 @@ angular.module('daeNG')
             });
         };
 
+
+
+
         $scope.getMail = function () {
             var id = "1a";
             $http({
@@ -121,6 +124,9 @@ angular.module('daeNG')
 
         };
 
+
+
+
         $scope.modifyFname = function () {
             var id = '1a';
             var news = $scope.user.firstname;
@@ -189,6 +195,7 @@ angular.module('daeNG')
             $scope.getMail();
             $scope.getAff();
             $scope.getPwd();
+
         };
 
 

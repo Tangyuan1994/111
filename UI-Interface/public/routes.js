@@ -158,7 +158,7 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
                     // },
                 })
                 .state('admin', {
-                    url: '/admin',
+                    url: '/admin.css',
                     templateUrl: 'admin/admin.html',
                     controller: 'AdminController',
                     // parent: 'site',

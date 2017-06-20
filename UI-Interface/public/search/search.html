@@ -7,4 +7,26 @@
         Vous avez cliqué sur le bouton :D
     </div>
     {{test}}
+
+    <br>
+    </br>
+    <br>
+    </br>
+
+    <div flex="20">
+       Search by ID:
+        <md-input-container>
+            <label>Search by ID:</label>
+            <input type="text" name="id" ng-model="dataSearch.id">
+        </md-input-container>
+        {{dataSearch.id}}
+    </div>
+
+
+    <div flex="10">
+        <md-button ng-click="chercher()">Search</md-button>
+    </div>
+
+    <img ng-src="data:image/png;base64,{{image}}">
+
 </md-content>

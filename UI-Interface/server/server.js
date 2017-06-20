@@ -381,6 +381,7 @@ router.post('/init', function (req, res) {
     })
 })
 
+router.get('/getDataset/:nom')
 
 router.get('/datasets/:id', function (req, res) {
     // Get all data
@@ -443,7 +444,7 @@ router.get('/datasets/:id', function (req, res) {
     } else {
 
         // Get image with id ...
-        nano.use('images').get('5330e2f3a0dd8ee433e3e702df012c19', function (err, body) {
+        nano.use('images').get(req.params.id, function (err, body) {
             if (!err) {
                 res.json(body);
 
@@ -804,6 +805,7 @@ router.get("/perso/:id/getDate", function (req, res) {
 });
 
 
+
 router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
     // nano.use('user').get(req.params.id, function (err, body) {
     nano.use('user').get('2a', function (err, body) {
@@ -931,6 +933,8 @@ router.post('/upload/:path/:type/:name/:country', function(req,res) {
     // Write data into JSON file
     var send = {'path': path, 'type': type, 'name': name, 'country': country};
 
+    console.log(send)
+
     //Insert JSON file into DB
     nano.use('images').insert(send);
 
@@ -977,4 +981,54 @@ function doRelease(connection) {
         });
 };*/
 
+
+/**
+ * Search
+ */
+
+// router.get('/datasets/:id', function(req,res){
+//
+//     var id = req.params.id;
+//     console.log(id);
+//
+//     nano.use('images').view('view-all', 'default', function (err, body) {
+//         if (!err) {
+//             res.json(body)
+//             console.log(body)
+//         }
+//     });
+//
+// });
+
+router.post('/Modify/:id/:new', function(req,res) {
+    // Get data from URL
+    var id = req.params.id;
+    var path = req.params.path;
+    var type = req.params.type;
+    var newname = req.params.newname;
+    var country = req.params.country;
+
+    nano.use('images').get(id, function(err,body){
+        console.log(body)
+        body.name = newname
+        nano.use('images').insert(body)
+    })
+    // Write data into JSON file
+    // var send = {'_id':id,'path': path, 'type': type, 'name': newname, 'country': country};
+    //
+    // console.log(send)
+    //
+    // //Change JSON file into DB
+    // nano.use('images').insert(send);
+
+});
+
 module.exports = router;
+
+router.get('/search/:id', function(req,res) {
+
+    var id = req.params.id;
+    nano.use('images').get(id, function(err,body) {
+        res.json(body)
+    })
+});
