@@ -912,14 +912,22 @@ router.post('/perso/:id/modifyPwd/:old/:pwd', function (req, res) {
  * UPLOAD
  */
 
-router.post('/upload', function(req,res){
+router.post('/upload/:path/:type/:name/:country', function(req,res){
+    // Get data from URL
     var path = req.params.path;
     var type = req.params.type;
     var name = req.params.name;
     var country = req.params.country;
+
+    // Write data into JSON file
     var send = {'path':path, 'type':type, 'name':name, 'country':country};
-    // nano.use('images').insert(send);
-})
+
+    //Insert JSON file into DB
+    nano.use('images').insert(send);
+
+    // Send response to the client
+    res.json(send)
+});
 
 
 module.exports = router;
