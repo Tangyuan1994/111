@@ -9,6 +9,7 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
+/*
 
 var oracledb = require('oracledb');
 var SSH = require('simple-ssh');
@@ -29,8 +30,8 @@ ssh.exec('echo $PATH', {
     //     console.log("erreur")
     // }
     ,
-    /*    out: console.log("out"),
-     in: console.log("in")*/
+    /!*    out: console.log("out"),
+     in: console.log("in")*!/
 
 
     out: (        function (stdout) {
@@ -40,6 +41,7 @@ ssh.exec('echo $PATH', {
     )
 }).start();
 
+*/
 
 //Required by ElasticSearch
 /*var elasticsearch = require('elasticsearch');
@@ -936,7 +938,7 @@ router.post('/upload/:path/:type/:name/:country', function(req,res) {
 
 /**********     CONNEXION ORACLE    **********/
 
-
+/*
 router.get('/oracleConnect', function (req, res) {
     //console.log("canard");
     oracledb.getConnection(
@@ -973,6 +975,6 @@ function doRelease(connection) {
             if (err)
                 console.error(err.message);
         });
-};
+};*/
 
 module.exports = router;

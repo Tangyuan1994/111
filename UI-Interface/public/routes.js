@@ -283,6 +283,19 @@ var daeNG = angular.module('daeNG', ['ngMessages','ngMaterial', 'ngAnimate', 'ng
                     //     roles: ["Admin","SuperUser","Anonymous"]
                     // },
                 })
+                .state('import', {
+                    url: '/import',
+                    templateUrl: 'import/import.html',
+                    controller: 'ImportController',
+                    // parent: 'site',
+                    // params: {
+                    //     username: "",
+                    //     password: ""
+                    // },
+                    // data: {
+                    //     roles: ["Admin","SuperUser","Anonymous"]
+                    // },
+                })
 
         }]);
         // .run(['$rootScope', '$state', '$stateParams',
