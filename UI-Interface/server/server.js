@@ -10,7 +10,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-
+var oracledb = require('oracledb');
 var SSH = require('simple-ssh');
 var ssh = new SSH({
     host: 'localhost:8008',
@@ -725,14 +725,19 @@ router.get('/', function (req, res, next) {
 });
 
 
+
+
+
 /**********     PAGE "PERSO"    **********/
 
 
 
 router.get("/perso/:id", function (req, res) {
     nano.use('user').get(req.params.id, function (err, body) {
-        if (body.total_rows == 0) {
-            console.log("Such id doesn't exist");
+        if (!(body == null)) {
+            if (body.total_rows == 0) {
+                console.log("Such id doesn't exist");
+            }
         }
         if (!err) {
             res.json(body);
@@ -741,7 +746,7 @@ router.get("/perso/:id", function (req, res) {
 });
 
 router.get("/perso/:id/getLname", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
             console.log("lastname : " + body.lname);
@@ -750,7 +755,7 @@ router.get("/perso/:id/getLname", function (req, res) {
 });
 
 router.get("/perso/:id/getFname", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
             console.log("firstname : " + body.fname);
@@ -759,7 +764,7 @@ router.get("/perso/:id/getFname", function (req, res) {
 });
 
 router.get("/perso/:id/getMail", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
             console.log("mail: " + body.mail);
@@ -768,7 +773,7 @@ router.get("/perso/:id/getMail", function (req, res) {
 });
 
 router.get("/perso/:id/getPwd", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
             console.log("password: " + body.passWord);
@@ -777,7 +782,7 @@ router.get("/perso/:id/getPwd", function (req, res) {
 });
 
 router.get("/perso/:id/getAff", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
             console.log("affiliation: " + body.affiliation);
@@ -786,10 +791,12 @@ router.get("/perso/:id/getAff", function (req, res) {
 });
 
 router.get("/perso/:id/getDate", function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
-            console.log("date: " + body.date.substring(0,3));
+            if (!(body.date == null)) {
+                console.log("date: " + body.date.substring(0, 3));
+            }
         }
     });
 });
@@ -797,16 +804,16 @@ router.get("/perso/:id/getDate", function (req, res) {
 
 router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
     // nano.use('user').get(req.params.id, function (err, body) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
-           // console.log(body.lname);
+            // console.log(body.lname);
             //console.log(req.params.lastname);
             if (req.params.lastname.length > 0) {
                 body.lname = req.params.lastname;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                       // console.log("Reussite")
+                        // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -820,16 +827,16 @@ router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
 
 router.post('/perso/:id/modifyFname/:firstname', function (req, res) {
     // nano.use('user').get(req.params.id, function (err, body) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         if (!err) {
             res.json(body);
-           // console.log(req.params.firstname);
+            // console.log(req.params.firstname);
             //console.log(body.fname);
             if (req.params.firstname.length > 0) {
                 body.fname = req.params.firstname;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                       // console.log("Reussite")
+                        // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -841,16 +848,16 @@ router.post('/perso/:id/modifyFname/:firstname', function (req, res) {
 
 
 router.post('/perso/:id/modifyMail/:mail', function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
 //    nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
-           // console.log(body.mail);
+            // console.log(body.mail);
             if (req.params.mail.length > 0) {
                 body.mail = req.params.mail;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                      //  console.log("Reussite")
+                        //  console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -862,16 +869,16 @@ router.post('/perso/:id/modifyMail/:mail', function (req, res) {
 });
 
 router.post('/perso/:id/modifyAffil/:affil', function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         //nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
-           // console.log(body.affiliation);
+            // console.log(body.affiliation);
             if (req.params.affil.length > 0) {
                 body.affiliation = req.params.affil;
                 nano.use('user').insert(body, function (err, body) {
                     if (!err) {
-                       // console.log("Reussite")
+                        // console.log("Reussite")
                     } else {
                         console.log(err);
                     }
@@ -883,7 +890,7 @@ router.post('/perso/:id/modifyAffil/:affil', function (req, res) {
 });
 
 router.post('/perso/:id/modifyPwd/:old/:pwd', function (req, res) {
-    nano.use('user').get('1a', function (err, body) {
+    nano.use('user').get('2a', function (err, body) {
         // nano.use('user').get(req.params.id, function (err, body) {
         if (!err) {
             res.json(body);
@@ -893,7 +900,7 @@ router.post('/perso/:id/modifyPwd/:old/:pwd', function (req, res) {
                     body.passWord = req.params.pwd;
                     nano.use('user').insert(body, function (err, body) {
                         if (!err) {
-                          //  console.log("Reussite")
+                            //  console.log("Reussite")
                         } else {
                             console.log(err);
                         }
@@ -912,7 +919,7 @@ router.post('/perso/:id/modifyPwd/:old/:pwd', function (req, res) {
  * UPLOAD
  */
 
-router.post('/upload/:path/:type/:name/:country', function(req,res){
+router.post('/upload/:path/:type/:name/:country', function(req,res) {
     // Get data from URL
     var path = req.params.path;
     var type = req.params.type;
@@ -920,14 +927,52 @@ router.post('/upload/:path/:type/:name/:country', function(req,res){
     var country = req.params.country;
 
     // Write data into JSON file
-    var send = {'path':path, 'type':type, 'name':name, 'country':country};
+    var send = {'path': path, 'type': type, 'name': name, 'country': country};
 
     //Insert JSON file into DB
     nano.use('images').insert(send);
 
-    // Send response to the client
-    res.json(send)
 });
 
+/**********     CONNEXION ORACLE    **********/
+
+
+router.get('/oracleConnect', function (req, res) {
+    //console.log("canard");
+    oracledb.getConnection(
+        {
+            user: "hr",
+            password: "welcome",
+            connectString: "localhost/XE"
+        },
+        function (err, connection) {
+            if (err) {
+                console.error(err.message);
+                return;
+            }
+            connection.execute(
+                "SELECT department_id, department_name " +
+                "FROM departments " +
+                "WHERE manager_id < :id",
+                [110],  // bind value for :id
+                function (err, result) {
+                    if (err) {
+                        console.error(err.message);
+                        doRelease(connection);
+                        return;
+                    }
+                    console.log(result.rows);
+                    doRelease(connection);
+                });
+        });
+});
+
+function doRelease(connection) {
+    connection.close(
+        function (err) {
+            if (err)
+                console.error(err.message);
+        });
+};
 
 module.exports = router;
