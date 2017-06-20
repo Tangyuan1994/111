@@ -3,7 +3,7 @@
  */
 
 angular.module('daeNG')
-    .controller('IndexController', function ($scope,$mdMedia,$window, principal, $stateParams,$mdSidenav, $http, $log, $mdDialog) {
+    .controller('IndexController', function ($scope,$mdMedia,$window/*, principal*/, $stateParams,$mdSidenav, $http, $log, $mdDialog) {
 
 /**
  ------------------------------------------------------------------
@@ -51,7 +51,7 @@ angular.module('daeNG')
         $scope.isTablet = $mdMedia("md");
         $scope.isLarge = $mdMedia("lg");
 
-        $scope.principal = principal
+        // $scope.principal = principal
         
 
 

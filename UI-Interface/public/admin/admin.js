@@ -68,6 +68,13 @@ angular.module('daeNG')
             })
         };
 
+        $scope.test = function () {
+            $http({
+                method: 'POST',
+                url: '/upload/a/a/a/a'
+            })
+        };
+
         $scope.createDatabase = function () {
             var token = $scope.random(10);
             $http({

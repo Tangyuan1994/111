@@ -1,3 +1,52 @@
-<md-content style="padding: 15px">
-    Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
+<md-content style="padding: 15px; height:100%" layout="column">
+
+    <div flex="20">
+        Path :
+        <input type="text" name="path" ng-model="dataUpload.path">
+        {{dataUpload.path}}
+    </div>
+
+    <div flex="20">
+        Type :
+        <md-input-container>
+            <label>Type :</label>
+            <input type="text" name="type" ng-model="dataUpload.type">
+        </md-input-container>
+        {{dataUpload.type}}
+
+    </div>
+
+    <div flex="20">
+        Name :
+        <md-input-container>
+            <label>Name :</label>
+            <input type="text" name="name" ng-model="dataUpload.name">
+        </md-input-container>
+        {{dataUpload.name}}
+    </div>
+
+    <div flex="20">
+        <md-autocomplete md-selected-item="dataUpload.country"
+                         md-items="item in test"
+                         md-item-text="item"
+                         md-min-length="0"
+                         placeholder="Choose a country">
+            <md-item-template>
+                <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
+            </md-item-template>
+            <md-not-found>
+                No states matching "{{searchText}}" were found.
+                <!--<a ng-click="newState(searchText)">Create a new one!</a>-->
+            </md-not-found>
+        </md-autocomplete>
+    </div>
+
+    <div flex="10">
+
+    </div>
+
+    <div flex="10">
+        <md-button ng-click="testEnvoi()">Validate</md-button>
+    </div>
+
 </md-content>

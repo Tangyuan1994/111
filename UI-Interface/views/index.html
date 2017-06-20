@@ -22,69 +22,57 @@
 
 
 </head>
-<body ng-controller="IndexController" ng-app="daeNG" ng-cloak layout="row" layout-align="start stretch"
-      style="min-height:100%; overflow-y: hidden">
+<body ng-controller="IndexController" ng-app="daeNG" ng-cloak layout="row" layout-align="start stretch" style="min-height:100%; overflow-y: hidden">
 <!--Left Toolbar-->
 <div flex-gt-md="5" flex-md="10" flex class="left-toolbar" layout="column" layout-align="space-between center">
     <div flex="10" style="display: flex;flex-direction: column;justify-content: center">
         <a ui-sref="home"><img src="index/lehigh_logo.png" style="width: 60px;height: 60px"></a>
     </div>
     <div flex="10">
-        <md-button ui-sref="search({{tmpAnon}})" class="md-icon-button" aria-label="Search"
-                   style="width:65px;height:65px; margin:0">
+        <!--<md-button ui-sref="search({{tmpAnon}})" class="md-icon-button" aria-label="Search" style="width:65px;height:65px; margin:0">-->
+        <md-button ui-sref="search" class="md-icon-button" aria-label="Search" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">search</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="contact({{tmpAnon}})" class="md-icon-button" aria-label="Contact"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="contact" class="md-icon-button" aria-label="Contact" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">send</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="tutorial({{tmpAnon}})" class="md-icon-button" aria-label="Tutorials"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="tutorial" class="md-icon-button" aria-label="Tutorials" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">school</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="browse({{tmpAdmin}})" class="md-icon-button" aria-label="Browse Data"
-                   style="width:65px;height:65px; margin:0">
+        <!--<md-button ui-sref="browse({{tmpAdmin}})" class="md-icon-button" aria-label="Browse Data" style="width:65px;height:65px; margin:0">-->
+        <md-button ui-sref="browse" class="md-icon-button" aria-label="Browse Data" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">archive</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="algorithms({{tmpAnon}})" class="md-icon-button" aria-label="Algorithms"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="algorithms" class="md-icon-button" aria-label="Algorithms" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">multiline_chart</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="upload({{tmpAnon}})" class="md-icon-button" aria-label="Upload Data"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="upload" class="md-icon-button" aria-label="Upload Data" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">cloud_upload</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="admin({{tmpAdmin}})" class="md-icon-button" aria-label="Admin panel"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="admin" class="md-icon-button" aria-label="Admin panel" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">apps</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="perso({{tmpAnon}})" class="md-icon-button" aria-label="Perso"
-                   style="width:65px;height:65px; margin:0">
+        <md-button ui-sref="perso" class="md-icon-button" aria-label="Perso" style="width:65px;height:65px; margin:0">
             <i class="material-icons" style="color: #fff; font-size: 2.5em">account_circle</i>
         </md-button>
     </div>
     <div flex="10">
-        <md-button ui-sref="import({{tmpAnon}})" class="md-icon-button" aria-label="Import"
-                   style="width:65px;height:65px; margin:0">
-            <i class="material-icons" style="color: #fff; font-size: 2.5em">flight_land</i>
-        </md-button>
-    </div>
 
-</div>
+    </div>
 </div>
 <!--Top toolbar-->
 <div flex-gt-md="95" flex-md="90">
@@ -92,34 +80,30 @@
         <div flex-gt-md="5" flex-md="10">
 
         </div>
-        <div ui-sref="home" flex-gt-md="30" flex-md="25"
-             style="font-size: 1.5em;color: #fff; font-weight: bold;display: flex;flex-direction: column;justify-content: center">
+        <div ui-sref="home" flex-gt-md="30" flex-md="25" style="font-size: 1.5em;color: #fff; font-weight: bold;display: flex;flex-direction: column;justify-content: center">
             {{title}}
         </div>
         <div flex-gt-md="30" flex-md="10">
 
         </div>
         <!--<div ng-show="userConnected.name.length>0" flex-gt-md="30" flex-md="40" layout="row" layout-align="space-between center">-->
-        <!--<div style="color:#fff; font-size: 1.5em">Welcome back, {{userConnected.gender=='H' ? 'M' : 'Ms'}} {{userConnected.name}}</div>-->
-        <!--<md-button ng-click="disconnection()" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">-->
-        <!--<i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>-->
-        <!--</md-button>-->
+            <!--<div style="color:#fff; font-size: 1.5em">Welcome back, {{userConnected.gender=='H' ? 'M' : 'Ms'}} {{userConnected.name}}</div>-->
+            <!--<md-button ng-click="disconnection()" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">-->
+                <!--<i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>-->
+            <!--</md-button>-->
         <!--</div>-->
-        <div ng-show="!userConnected.name.length>0" flex-gt-md="40" flex-md="40" layout="row"
-             layout-align="space-between center" style="color:#fff;border-color: #fff">
+        <div ng-show="!userConnected.name.length>0" flex-gt-md="40" flex-md="40" layout="row" layout-align="space-between center" style="color:#fff;border-color: #fff">
             <form name="connexion" layout="row" layout-align="space-between center" style="padding-top:20px">
                 <md-input-container flex="45">
                     <label style="color:#fff;border-color: #fff">Username</label>
-                    <input style="color:#fff;border-color: #fff" name="username" type="text"
-                           ng-model="tmpUser.username" required md-no-asterisk>
+                    <input style="color:#fff;border-color: #fff" name="username" type="text" ng-model="tmpUser.username" required md-no-asterisk>
                     <div ng-messages="connexion.username.$error" style="color:red">
                         <div ng-message="required" style="font-size: 0.65em">You may enter your username</div>
                     </div>
                 </md-input-container>
                 <md-input-container flex="45">
                     <label style="color:#fff;border-color: #fff">Password</label>
-                    <input style="color:#fff;border-color: #fff" name="password" type="password"
-                           ng-model="tmpUser.password" required md-no-asterisk>
+                    <input style="color:#fff;border-color: #fff" name="password" type="password" ng-model="tmpUser.password" required md-no-asterisk>
                     <div ng-messages="connexion.password.$error" style="color:red">
                         <div ng-message="required" style="font-size: 0.65em">You may enter your password</div>
                     </div>
@@ -136,8 +120,7 @@
                     <i class="material-icons" style="color: #fff; font-size: 2.5em">add_circle</i>
                 </md-button>
             </div>
-            <md-button ng-click="connection(tmpUsername)" class="md-icon-button" aria-label="More"
-                       style="width:65px;height:65px; margin:0">
+            <md-button ng-click="connection(tmpUsername)" class="md-icon-button" aria-label="More" style="width:65px;height:65px; margin:0">
                 <i class="material-icons" style="color: #fff; font-size: 2.5em">power_settings_new</i>
             </md-button>
         </div>
@@ -149,8 +132,7 @@
     </div>
 
     <!--View-->
-    <div ui-view
-         style=" overflow-y: scroll;height:{{heightWindow}}px;margin-top: {{isTablet ? '8':'5'}}%; margin-left:{{isTablet ?'11':'5'}}%; width:100%">
+    <div ui-view style=" overflow-y: scroll;height:{{heightWindow}}px;margin-top: {{isTablet ? '8':'5'}}%; margin-left:{{isTablet ?'11':'5'}}%; width:100%">
 
     </div>
 
@@ -160,7 +142,7 @@
 
 <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
-    <md-toolbar style="background-color:#452506; height:{{isLarge?8:9.5}}%">
+    <md-toolbar style = "background-color:#452506; height:{{isLarge?8:9.5}}%" >
         <h1 class="md-toolbar-tools">Sign in</h1>
     </md-toolbar>
     <md-content layout-padding>
@@ -192,8 +174,7 @@
                 <input type="email" name="email"
                        ng-model="signIn.email" ng-pattern="regex" required>
                 <div ng-messages="subscription.email.$error">
-                    <div ng-message="email" style="font-size: 0.65em">This field must be a valid email address.
-                    </div>
+                    <div ng-message="email" style="font-size: 0.65em">This field must be a valid email address.</div>
                     <div ng-message="required" style="font-size: 0.65em">You must have an email !</div>
                 </div>
             </md-input-container>
@@ -223,8 +204,7 @@
         <md-button ng-click="closeButton()" class="md-primary">
             Cancel
         </md-button>
-        <md-button ng-click="validate()" class="md-primary"
-                   ng-disabled="!(signIn.firstName && signIn.lastName && signIn.email && (signIn.password1 == signIn.password2) )">
+        <md-button ng-click="validate()" class="md-primary" ng-disabled="!(signIn.firstName && signIn.lastName && signIn.email && (signIn.password1 == signIn.password2) )">
             Validate
         </md-button>
         <div ng-show="error" style="color: red">
@@ -252,7 +232,6 @@
 <script src="home/home.js" type="text/javascript"></script>
 <script src="sign_in/sign_in.js" type="text/javascript"></script>
 <script src="perso/perso.js" type="text/javascript"></script>
-<script src="import/import.js" type="text/javascript"></script>
 
 </html>
 

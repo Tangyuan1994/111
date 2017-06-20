@@ -13,7 +13,7 @@ angular.module('daeNG')
 
 
         $scope.getLname = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getLname'
@@ -28,7 +28,7 @@ angular.module('daeNG')
 
 
         $scope.getFname = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getFname'
@@ -42,7 +42,7 @@ angular.module('daeNG')
         };
 
         $scope.getMail = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getMail'
@@ -56,7 +56,7 @@ angular.module('daeNG')
         };
 
         $scope.getAff = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getAff'
@@ -70,7 +70,7 @@ angular.module('daeNG')
         };
 
         $scope.getPwd = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getPwd'
@@ -84,7 +84,7 @@ angular.module('daeNG')
         };
 
         $scope.getDate = function () {
-            var id = "2a";
+            var id = "1a";
             $http({
                 method: 'GET',
                 url: '/perso/' + id + '/getDate'
@@ -107,7 +107,7 @@ angular.module('daeNG')
 
 
         $scope.modifyLname = function () {
-            var id = '2a';
+            var id = '1a';
             var news = $scope.user.lastname;
             $http({
                 method: 'POST',
@@ -122,7 +122,7 @@ angular.module('daeNG')
         };
 
         $scope.modifyFname = function () {
-            var id = '2a';
+            var id = '1a';
             var news = $scope.user.firstname;
             $http({
                 method: 'POST',
@@ -137,7 +137,7 @@ angular.module('daeNG')
 
 
         $scope.modifyMail = function () {
-            var id = '2a';
+            var id = '1a';
             var news = $scope.user.email;
             $http({
                 method: 'POST',
@@ -151,7 +151,7 @@ angular.module('daeNG')
         };
 
         $scope.modifyAff = function () {
-            var id = '2a';
+            var id = '1a';
             var news = $scope.user.aff;
             $http({
                 method: 'POST',
@@ -165,7 +165,7 @@ angular.module('daeNG')
         };
 
         $scope.modifyPwd = function () {
-            var id = '2a';
+            var id = '1a';
             var news = $scope.user.pwd1;
             var old = $scope.user.oldPwd;
             $http({
@@ -190,7 +190,6 @@ angular.module('daeNG')
             $scope.getAff();
             $scope.getPwd();
         };
-
 
 
     })
