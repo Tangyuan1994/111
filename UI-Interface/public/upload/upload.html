@@ -1,6 +1,6 @@
 <md-content style="padding: 15px; height:100%" layout="column">
 
-    <md-tabs>
+    <md-tabs md-dynamic-height>
         <md-tab label="Upload">
 
             <br>
@@ -54,7 +54,9 @@
             </div>
 
             <div flex="10">
-                <md-button ng-click="testEnvoi()">Validate</md-button>
+                <br>
+                <br>
+                <md-button class="md-raised md-primary val-button" ng-click="testEnvoi()">Validate</md-button>
             </div>
 
         </md-tab>
@@ -64,7 +66,7 @@
             </br>
 
             <div flex="20">
-                Please input the id :
+                Please input the id:
                 <md-input-container>
                     <label>ID :</label>
                     <input type="text" name="id" ng-model="dataModified.id">
@@ -84,7 +86,7 @@
             </div>
 
             <div flex="10">
-                <md-button ng-click="modification()">Modification</md-button>
+                <md-button  <md-button class="md-raised md-primary val-button" ng-click="modification()">Modification</md-button>
             </div>
 
 

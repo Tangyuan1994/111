@@ -1032,3 +1032,41 @@ router.get('/search/:id', function(req,res) {
         res.json(body)
     })
 });
+
+
+router.post('/contact/:username/:email/:subject/:mes', function(req,res) {
+  // Get data from URL
+  var email = req.params.email;
+  var subject = req.params.subject;
+  var username = req.params.username;
+  var mes = req.params.mes;
+
+  // Write data into JSON file
+  var information = {'username': username, 'email': email, 'subject': subject, 'mes': mes};
+
+  console.log(information)
+
+  //Insert JSON file into DB
+  nano.use('contact').insert(information);
+});
+
+
+
+router.get('/deleteMsg/:id', function(req,res) {
+  // Get data from URL
+  var id=req.params.id;
+  var supression = {'id':id};
+ // console.log(supression)
+
+  //Detele JSON file into DB
+  nano.use('contact').get(id, function(err,body){
+    //console.log(id)
+    body.email = ''
+    body.subject = ''
+    body.mes = ''
+    body.username=''
+   //console.log('hello')
+    nano.use('contact').insert(body)
+    //console.log(body.email)
+  })
+});

@@ -1,3 +1,43 @@
-<md-content style="padding: 15px">
-    Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
+
+<md-content style="padding: 15px" class="dark-matter">
+    <body style="" ng-controller="add_msg">
+    <div  >
+        <br>
+        <h1>Contact Us
+            <span> Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !</span>
+        </h1>
+
+        <p >Name <p/><md-input-container><input type="text" name="name" ng-model="username"> </md-input-container>
+        {{username}}
+            <div>Email<div/>  <md-input-container><input type="text" name="email" ng-model="email"></md-input-container>
+                {{email}}
+            <div >Subject</div><md-input-container><input type="text" name="subject" ng-model="subject"></md-input-container>
+                {{subject}}
+            <div >Message</div>
+            <textarea name="mes" cols="30" rows="10" ng-model="mes" ng.keyup="keyup($event)"></textarea><br />
+            <br>
+        <md-button  <md-button class="md-raised md-primary val-button" ng-click="add()">Validation</md-button>
+        </div>
+    </div>
+
+
+    <div  ng-repeat="item in data">
+        <ul>
+            <li >Name：{{item.username}}</li>
+            <li >Email：{{item.email}}</li>
+            <li >Subject：{{item.subject}}</li>
+            <li >Massage：{{item.mes}}</li>
+        </ul>
+    </div>
+
+    <div>
+        <br>
+        <br>
+        Please input the id:
+            <input type="text" name="id" ng-model="id">
+    </div>
+    <li class="button"ng-click="delete()">Delete</li>
+
+    </body>
 </md-content>
+

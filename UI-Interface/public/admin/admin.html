@@ -2,17 +2,20 @@
     <md-tabs md-dynamic-height>
         <md-tab label="CouchDB">
             <div style="padding-left: 20px">
-                <md-button ng-click="getAll()">Get all images</md-button>
-                <md-button ng-click="getOne()">Get one image</md-button>
+                <md-button class="md-raised md-primary val-button" ng-click="getAll()">Get all images</md-button>
+                <md-button class="admin"ng-click="getOne()">Get one image</md-button>
                 <md-button ng-click="getRates()">Get one rates array</md-button>
                 <md-button ng-click="getTags()">Get one tags array</md-button>
+                <div style="padding-left: 0px">
                 <md-button ng-click="addTag()">Add one tag </md-button>
                 <md-button ng-click="modifyTag()">Modify one tag </md-button>
                 <md-button ng-click="deleteTag()">Delete one tag </md-button>
                 <md-button ng-click="createDatabase()">Create New DB</md-button>
+                    <div style="padding-left: 0px">
                 <md-button ng-click="addView()">Add a new view</md-button>
                 <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
                 <md-button ng-click="initBDDImages()">Initialisation de la Base de Données Images</md-button>
+                        <div style="padding-left: 0px">
                 <md-button ng-click="addRates()">Add one rate</md-button>
                 <md-button ng-click="modifyRates()">Modify a rate</md-button>
                 <md-button ng-click="deleteRate()">Delete a rate</md-button>
