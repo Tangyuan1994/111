@@ -1,4 +1,4 @@
-<md-content layout="column" layout-align="start start">
+<md-content ng-controller="BrowseController" layout="column" layout-align="start start">
     <!--Top toolbar-->
     <div flex="10" layout="row" layout-align="space-between center" class="top-browse-toolbar" md-whiteframe style="top:{{isLarge?8:9.5}}%">
 
@@ -47,7 +47,41 @@
     </div>
 
     <!--Content-->
-    <div flex="90" style="margin-top:{{isTablet?5:isLarge?4.5:3.5}}%;padding:20px;text-align: start;">
-        Hello world !<BR>
+    <div flex="90"  style="margin-top:{{isTablet?5:isLarge?4.5:3.5}}%;padding:20px;text-align: start; width:100%">
+        <div layout="column" layout-gt-xs="row" >
+
+            <md-card flex-md="50" flex-gt-md="55" style="text-align: center">
+                <h3 style = "color : #404040;">G_1</h3>
+                <!--<hr style="color: #707070">-->
+                <md-divider ng-if="!$last"></md-divider>
+                <md-card-content ng-click="zoom()" layout="column" >
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesTop" style="border:solid 0.5px #707070;" >
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
+
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesBot">
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
+
+                </md-card-content>
+            </md-card>
+            <md-card flex-md="50" flex-gt-md="55" style="text-align: center">
+                <h3>UNLV</h3>
+                <md-card-content>
+
+                </md-card-content>
+            </md-card>
+            <md-card flex-md="50" flex-gt-md="55" style="text-align: center">
+                <h2>Card title #2</h2>
+                <md-card-content>
+                    <p>Some content</p>
+                </md-card-content>
+            </md-card>
+        </div>
     </div>
+
 </md-content>

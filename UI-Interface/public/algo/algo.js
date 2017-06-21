@@ -107,7 +107,7 @@ angular.module('daeNG')
         /**
          * Function for a customized query
          */
-        $scope.submitQuerie = function(){
+        $scope.submitQuery = function(){
 
         }
 
