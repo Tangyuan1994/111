@@ -78,7 +78,6 @@ ssh.connect({
     host : 'mastodons.loria.fr',
     username : 'cpineau',
     // TODO : password
-    password : 'pd3mpk4v!.P'
 }).then(function () {
     console.log('Ok')
     /*ssh.putFile(localAddress, serverAddress).then(function() {
