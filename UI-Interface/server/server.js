@@ -9,7 +9,6 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-/*
 
 var oracledb = require('oracledb');
 var SSH = require('simple-ssh');
@@ -19,29 +18,6 @@ var ssh = new SSH({
     pass: 'password'
 });
 
-ssh.exec('echo $PATH', {
-    err: (        function (stderr) {
-            console.log(stderr);
-            console.log("err");
-        }
-    )
-
-    //     function (err) {
-    //     console.log("erreur")
-    // }
-    ,
-    /!*    out: console.log("out"),
-     in: console.log("in")*!/
-
-
-    out: (        function (stdout) {
-            console.log(stdout);
-            console.log("out");
-        }
-    )
-}).start();
-
-*/
 
 //Required by ElasticSearch
 /*var elasticsearch = require('elasticsearch');
@@ -69,6 +45,96 @@ var username = 'admin';
 var password = 'azerty01';
 var cookies = {}; // store cookies, normally redis or something
 
+// SSH connection
+var driver = require('node-ssh');
+var ssh = new driver();
+var localAddress = '/Users/Constance/Documents/Test/test.rtf';
+var serverAddress = '/data/local1/rcv';
+
+    /*ssh.connect({
+        host: 'loria.loria.fr',
+        username: 'cpineau',
+        privateKey : '/Users/Constance/.ssh/id_rsa'
+    }).then(function(){
+        console.log("Connect 1");
+        ssh.connect({
+            host : 'mastodons.loria.fr',
+            username : 'cpineau',
+            //TODO : password
+        }).then(function(){
+            console.log('Youhou')
+        }, function (err){
+            console.log("Problème");
+            console.log(err)
+        })
+
+    }, function (error){
+        console.log("Something wrong");
+        console.log(error);
+    });*/
+
+//Connection to Mastodons
+ssh.connect({
+    host : 'mastodons.loria.fr',
+    username : 'cpineau',
+    // TODO : password
+    password : 'pd3mpk4v!.P'
+}).then(function () {
+    console.log('Ok')
+    /*ssh.putFile(localAddress, serverAddress).then(function() {
+        console.log("The File thing is done")
+    }, function(error) {
+        console.log("Something's wrong")
+        console.log(error)
+    })*/
+},function (err){
+    console.log("Problème");
+    console.log(err)
+});
+
+
+/**********     CONNEXION ORACLE    **********/
+
+
+router.get('/oracleConnect', function (req, res) {
+    //console.log("canard");
+    oracledb.getConnection(
+        {
+            user: "dae",
+            password: "dae",
+            connectString: "localhost/XE"
+        },
+        function (err, connection) {
+            if (err) {
+                console.error(err.message);
+                return;
+            }
+            connection.execute(
+                "SELECT id, path " +
+                "FROM page_image "
+                    //+ "WHERE manager_id < :id",
+                    [110],  // bind value for :id
+                function (err, result) {
+                    if (err) {
+                        console.error(err.message);
+                        doRelease(connection);
+                        return;
+                    }
+                    console.log(result.rows);
+                    doRelease(connection);
+                });
+        });
+});
+
+function doRelease(connection) {
+    connection.close(
+        function (err) {
+            if (err)
+                console.error(err.message);
+        });
+};
+
+//*********** FIN *************//
 
 router.post('/create/newDb/:id', function (req, res) {
     console.log(nano.config.url)
@@ -191,7 +257,7 @@ router.post('/deleteES', function (req, res) {
     }, function (err) {
         console.log(err);
     });
-})
+});
 
 router.post('/initBDDImages', function (req, res) {
     nano.db.create('images', function (err, body) {
@@ -381,7 +447,6 @@ router.post('/init', function (req, res) {
     })
 })
 
-router.get('/getDataset/:nom')
 
 router.get('/datasets/:id', function (req, res) {
     // Get all data
@@ -444,7 +509,7 @@ router.get('/datasets/:id', function (req, res) {
     } else {
 
         // Get image with id ...
-        nano.use('images').get(req.params.id, function (err, body) {
+        nano.use('images').get('5330e2f3a0dd8ee433e3e702df012c19', function (err, body) {
             if (!err) {
                 res.json(body);
 
@@ -805,7 +870,6 @@ router.get("/perso/:id/getDate", function (req, res) {
 });
 
 
-
 router.post('/perso/:id/modifyLname/:lastname', function (req, res) {
     // nano.use('user').get(req.params.id, function (err, body) {
     nano.use('user').get('2a', function (err, body) {
@@ -933,53 +997,12 @@ router.post('/upload/:path/:type/:name/:country', function(req,res) {
     // Write data into JSON file
     var send = {'path': path, 'type': type, 'name': name, 'country': country};
 
-    console.log(send)
-
     //Insert JSON file into DB
     nano.use('images').insert(send);
 
 });
 
-/**********     CONNEXION ORACLE    **********/
 
-/*
-router.get('/oracleConnect', function (req, res) {
-    //console.log("canard");
-    oracledb.getConnection(
-        {
-            user: "hr",
-            password: "welcome",
-            connectString: "localhost/XE"
-        },
-        function (err, connection) {
-            if (err) {
-                console.error(err.message);
-                return;
-            }
-            connection.execute(
-                "SELECT department_id, department_name " +
-                "FROM departments " +
-                "WHERE manager_id < :id",
-                [110],  // bind value for :id
-                function (err, result) {
-                    if (err) {
-                        console.error(err.message);
-                        doRelease(connection);
-                        return;
-                    }
-                    console.log(result.rows);
-                    doRelease(connection);
-                });
-        });
-});
-
-function doRelease(connection) {
-    connection.close(
-        function (err) {
-            if (err)
-                console.error(err.message);
-        });
-};*/
 
 
 /**
