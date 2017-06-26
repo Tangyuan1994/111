@@ -9,7 +9,7 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-
+/*
 var oracledb = require('oracledb');
 var SSH = require('simple-ssh');
 var ssh = new SSH({
@@ -46,10 +46,10 @@ var password = 'azerty01';
 var cookies = {}; // store cookies, normally redis or something
 
 // SSH connection
-var driver = require('node-ssh');
-var ssh = new driver();
-var localAddress = '/Users/Constance/Documents/Test/test.rtf';
-var serverAddress = '/data/local1/rcv';
+//var driver = require('node-ssh');
+//var ssh = new driver();
+//var localAddress = '/Users/Constance/Documents/Test/test.rtf';
+//var serverAddress = '/data/local1/rcv';
 
     /*ssh.connect({
         host: 'loria.loria.fr',
@@ -60,7 +60,7 @@ var serverAddress = '/data/local1/rcv';
         ssh.connect({
             host : 'mastodons.loria.fr',
             username : 'cpineau',
-            //TODO : password
+
         }).then(function(){
             console.log('Youhou')
         }, function (err){
@@ -74,10 +74,10 @@ var serverAddress = '/data/local1/rcv';
     });*/
 
 //Connection to Mastodons
-ssh.connect({
+/*ssh.connect({
     host : 'mastodons.loria.fr',
     username : 'cpineau',
-    // TODO : password
+
 }).then(function () {
     console.log('Ok')
     /*ssh.putFile(localAddress, serverAddress).then(function() {
@@ -85,17 +85,17 @@ ssh.connect({
     }, function(error) {
         console.log("Something's wrong")
         console.log(error)
-    })*/
+    })
 },function (err){
     console.log("Problème");
     console.log(err)
-});
+});*/
 
 
 /**********     CONNEXION ORACLE    **********/
 
 
-router.get('/oracleConnect', function (req, res) {
+/*router.get('/oracleConnect', function (req, res) {
     //console.log("canard");
     oracledb.getConnection(
         {
@@ -133,7 +133,7 @@ function doRelease(connection) {
         });
 };
 
-//*********** FIN *************//
+//*********** FIN *************/
 
 router.post('/create/newDb/:id', function (req, res) {
     console.log(nano.config.url)
