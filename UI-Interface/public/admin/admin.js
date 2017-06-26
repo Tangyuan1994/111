@@ -205,6 +205,96 @@ angular.module('daeNG')
 
         }
 
+        /**
+         * --------------------------------------------------------------------------------------------------------------------
+         * SECURITY
+         * --------------------------------------------------------------------------------------------------------------------
+         */
 
+        $scope.firebaseLogin = function(number){
+            if (number==1){
+                var username = "capfloy77@gmail.com";
+                var password = "123456";
+            } else {
+                var username = "florian.bertot@depinfonancy.net";
+                var password = "123456";
+            }
+            $http({
+                method: 'GET',
+                url: '/connexion/'+username+'/'+password
+            }).then(function successCallBack(response){
+                console.log(response.data)
+                $scope.getToken(response.data)
+            }, function errorCallBack(err){
+                console.log(err)
+            })
+        }
 
+        $scope.firebaseCreate = function(){
+            var username = "capfloy77@gmail.com";
+            var password = "123456";
+            $http({
+                method: 'POST',
+                url: '/createAccount/'+username+'/'+password
+            }).then(function successCallBack(response){
+                console.log(response)
+            }, function errorCallBack(err){
+                console.log(err)
+            })
+        }
+
+        $scope.firebaseLogout = function(){
+            $http({
+                method: 'GET',
+                url: 'logOut'
+            }).then(function successCallBack(response){
+                console.log(response)
+            }, function errorCallBack(err){
+                console.log(err)
+            })
+        };
+
+        $scope.firebaseIsConnected = function(){
+            $http({
+                method: 'GET',
+                url: '/isConnected/'
+            }).then(function successCallBack(response){
+                console.log(response.data)
+                if (response.data != null){
+
+                }
+            }, function errorCallBack(err){
+                console.log(err)
+            })
+        }
+
+        $scope.firebaseToken = function() {
+            $http({
+                method: 'GET',
+                url: 'tokens'
+            }).then(function successCallBack(response) {
+                $scope.tokenArray = response.data
+                console.log(response)
+            }, function errorCallBack(err) {
+                console.log(err)
+            })
+        }
+
+        $scope.requestToken = function(token){
+            console.log()
+            $http({
+                method:'GET',
+                url: '/getData/'+token
+            }).then(function successCallBack(response){
+                $scope.dataToken = response.data;
+            })
+        }
+
+        $scope.checkToken = function(taille){
+            var token = $scope.random(taille);
+            $http({
+                method: 'GET',
+                url: '/checkToken/'+token
+            })
+        }
     });
