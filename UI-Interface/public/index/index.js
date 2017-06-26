@@ -5,11 +5,17 @@
 angular.module('daeNG')
     .controller('IndexController', function ($scope,$mdMedia,$window/*, principal*/, $stateParams,$mdSidenav, $http, $log, $mdDialog) {
 
-/**
- ------------------------------------------------------------------
- HERITAGE
- ------------------------------------------------------------------
- **/
+        /**
+         ------------------------------------------------------------------
+         HERITAGE
+         ------------------------------------------------------------------
+         **/
+
+        $scope.token = null;
+
+        $scope.getToken = function(token){
+            $scope.token = token;
+        }
 
         $scope.testHeritage = function(title){
             $scope.title = title
@@ -52,14 +58,14 @@ angular.module('daeNG')
         $scope.isLarge = $mdMedia("lg");
 
         // $scope.principal = principal
-        
 
 
-/**
- ------------------------------------------------------------------
- CONTROLLER
- ------------------------------------------------------------------
- **/
+
+        /**
+         ------------------------------------------------------------------
+         CONTROLLER
+         ------------------------------------------------------------------
+         **/
 
         $scope.user = {"username":"", "password":""};
 

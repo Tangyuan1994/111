@@ -7,32 +7,32 @@
                 <md-button ng-click="getRates()">Get one rates array</md-button>
                 <md-button ng-click="getTags()">Get one tags array</md-button>
                 <div style="padding-left: 0px">
-                <md-button ng-click="addTag()">Add one tag </md-button>
-                <md-button ng-click="modifyTag()">Modify one tag </md-button>
-                <md-button ng-click="deleteTag()">Delete one tag </md-button>
-                <md-button ng-click="createDatabase()">Create New DB</md-button>
+                    <md-button ng-click="addTag()">Add one tag </md-button>
+                    <md-button ng-click="modifyTag()">Modify one tag </md-button>
+                    <md-button ng-click="deleteTag()">Delete one tag </md-button>
+                    <md-button ng-click="createDatabase()">Create New DB</md-button>
                     <div style="padding-left: 0px">
-                <md-button ng-click="addView()">Add a new view</md-button>
-                <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
-                <md-button ng-click="initBDDImages()">Initialisation de la Base de Données Images</md-button>
+                        <md-button ng-click="addView()">Add a new view</md-button>
+                        <md-button ng-click="initBDD()">Initialisation de la Base de Données Page-Img</md-button>
+                        <md-button ng-click="initBDDImages()">Initialisation de la Base de Données Images</md-button>
                         <div style="padding-left: 0px">
-                <md-button ng-click="addRates()">Add one rate</md-button>
-                <md-button ng-click="modifyRates()">Modify a rate</md-button>
-                <md-button ng-click="deleteRate()">Delete a rate</md-button>
-                <md-button ng-click="connectSsh()">Connect in SSH</md-button>
+                            <md-button ng-click="addRates()">Add one rate</md-button>
+                            <md-button ng-click="modifyRates()">Modify a rate</md-button>
+                            <md-button ng-click="deleteRate()">Delete a rate</md-button>
+                            <md-button ng-click="connectSsh()">Connect in SSH</md-button>
 
 
-                <div ng-repeat="data in browsedImages">
-                    <img ng-src="data:image/png;base64,{{data.value.image}}">
-                </div>
-                <div ng-repeat="tag in tags">
-                    {{tag}}
-                </div>
-                <div ng-repeat="rate in rates">
-                    {{rate}}
-                </div>
+                            <div ng-repeat="data in browsedImages">
+                                <img ng-src="data:image/png;base64,{{data.value.image}}">
+                            </div>
+                            <div ng-repeat="tag in tags">
+                                {{tag}}
+                            </div>
+                            <div ng-repeat="rate in rates">
+                                {{rate}}
+                            </div>
 
-            </div>
+                        </div>
         </md-tab>
         <md-tab label="ElasticSearch" style="padding-left: 20px">
             <div style="padding-left: 20px">
@@ -44,6 +44,36 @@
             <div style="padding-left: 20px">
                 <md-button ng-click="testHeritage('Hello world')">Test héritage fils->père</md-button>
                 <md-button ng-click="hasClicked()">Test Heritage fils->fils</md-button>
+            </div>
+        </md-tab>
+        <md-tab label="Securité" style="padding-left: 20px">
+            <div style="padding-left: 20px">
+                <md-button ng-click="firebaseLogin(1)">Login with first adress</md-button>
+                <md-button ng-click="firebaseLogin(2)">Login with second adress</md-button>
+                <md-button ng-click="firebaseCreate()">Create Account</md-button>
+                <md-button ng-click="firebaseLogout()">Logout</md-button>
+                <md-button ng-click="firebaseIsConnected()">Check if connected</md-button>
+                <md-button ng-click="firebaseToken()">Get Token into Server</md-button>
+                <md-button ng-click="checkToken(900)">Check if random token work</md-button>
+                <md-divider></md-divider>
+                <md-button ng-click="requestToken(null)">Request Without Token</md-button>
+                <md-button ng-click="requestToken('qudhqjkldshoilfkhqljkdgSBDKJHGZDKHZ')">Request With fake Token</md-button>
+                <md-button ng-click="requestToken(token)">Request With current used token</md-button>
+                <!--{{testGetData}}-->
+                <md-divider></md-divider>
+
+                <BR>Le token actuellement utilisé est : <BR>
+                {{token}}
+                <md-divider></md-divider>
+
+                <BR>Les tokens actuellement sur les serveurs sont : <BR>
+                {{tokenArray}}
+                <md-divider></md-divider>
+
+                <BR>Quelles données avez vous reçu ?<BR>
+                {{dataToken}}
+
+
             </div>
         </md-tab>
     </md-tabs>

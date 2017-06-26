@@ -9,14 +9,160 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-/*
-var oracledb = require('oracledb');
-var SSH = require('simple-ssh');
-var ssh = new SSH({
-    host: 'localhost:8008',
-    user: 'username',
-    pass: 'password'
+
+/**
+ * --------------------------------------------------------------------------------------------------------------------
+ * SECURITY
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+var tokens = []
+
+/**
+ * *******************************
+ * Firebase Admin SDK - VerificationServer
+ * *******************************
+ */
+
+var admin = require("firebase-admin");
+
+var credential = require('../ssh/adminConfig.json');
+
+admin.initializeApp({
+    credential: admin.credential.cert(credential),
+    databaseURL: "https://dae-ng.firebaseio.com"
 });
+
+var checkToken = function(IdToken){
+    return admin.auth().verifyIdToken(IdToken)
+};
+
+router.get('/checkToken/:token', function(req,res){
+    checkToken(req.params.token)
+        .then(function(decodedToken){
+            console.log(decodedToken)
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+})
+
+/**
+ * *******************************
+ * Firebase Authentication - AuthServer
+ * *******************************
+ */
+
+
+var firebase = require("firebase");
+
+//Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBcuwhwkzvIIcEA95THJr3wfzJV56qwunU",
+    authDomain: "dae-ng.firebaseapp.com",
+    databaseURL: "https://dae-ng.firebaseio.com",
+    projectId: "dae-ng",
+    storageBucket: "dae-ng.appspot.com",
+    messagingSenderId: "445799919658"
+};
+var fb = firebase.initializeApp(config);
+
+var createAccount = function(email, password){
+    fb.auth().createUserWithEmailAndPassword(email, password);
+    console.log('Well done !')
+}
+
+router.post('/createAccount/:email/:password', function(req,res){
+    createAccount(req.params.email, req.params.password)
+})
+
+var getConnectedUser = function(){
+    return fb.auth().currentUser
+}
+
+router.get('/isConnected', function(req,res){
+    res.json(getConnectedUser())
+})
+
+router.get('/logOut', function(req,res){
+    console.log('Hello world !')
+    fb.auth()
+        .signOut()
+        .then(function(){
+            console.log(fb.auth().currentUser)
+        })
+        .catch(function(err){
+
+        })
+})
+
+router.get('/connexion/:email/:password', function(req,res){
+    // console.log("Hello world !")
+    var username = req.params.email;
+    var password = req.params.password
+    var cred = fb
+        .auth()
+        .signInWithEmailAndPassword(username, password)
+        .then(function(){
+            fb.auth().currentUser.getIdToken(true)
+                .then(function(IdToken){
+                    checkToken(IdToken)
+                    tokens.push(IdToken);
+                    res.json(IdToken)
+                    fb.auth().signOut()
+                })
+        })
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("Code Erreur", errorCode, "Message", errorMessage);
+            // ...
+        });
+})
+
+router.get('/tokens', function(req,res){
+    res.json(tokens)
+})
+
+var random = function(taille){
+    var text = "";
+    var possible = "abcdefghijklmnopqrstuvwxyzAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
+
+    for( var i=0; i < taille; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+};
+
+router.get('/getData/:token', function(req,res){
+    checkToken(req.params.token)
+        .then(function(decodedToken){
+            res.json('Voici les données')
+        })
+        .catch(function(error){
+            res.json('JAMAIS VOUS N\'AUREZ CES DONNÉES !');
+        })
+
+})
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------------
+ * DISTANT DATABASE CONNEXION
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/*var oracledb = require('oracledb');
+ var SSH = require('simple-ssh');
+ var ssh = new SSH({
+ host: 'localhost:8008',
+ user: 'username',
+ pass: 'password'
+ });*/
+
+
 
 
 //Required by ElasticSearch
@@ -75,21 +221,21 @@ var cookies = {}; // store cookies, normally redis or something
 
 //Connection to Mastodons
 /*ssh.connect({
-    host : 'mastodons.loria.fr',
-    username : 'cpineau',
-
-}).then(function () {
-    console.log('Ok')
-    /*ssh.putFile(localAddress, serverAddress).then(function() {
-        console.log("The File thing is done")
-    }, function(error) {
-        console.log("Something's wrong")
-        console.log(error)
-    })
-},function (err){
-    console.log("Problème");
-    console.log(err)
-});*/
+ host : 'mastodons.loria.fr',
+ username : 'cpineau',
+ // TODO : password
+ }).then(function () {
+ console.log('Ok')
+ /*ssh.putFile(localAddress, serverAddress).then(function() {
+ console.log("The File thing is done")
+ }, function(error) {
+ console.log("Something's wrong")
+ console.log(error)
+ })*//*
+ },function (err){
+ console.log("Problème");
+ console.log(err)
+ });
 
 
 /**********     CONNEXION ORACLE    **********/
@@ -133,7 +279,13 @@ function doRelease(connection) {
         });
 };
 
-//*********** FIN *************/
+ /*********** FIN *************/
+
+/**
+ * --------------------------------------------------------------------------------------------------------------------
+ * DATASERVER
+ * --------------------------------------------------------------------------------------------------------------------
+ */
 
 router.post('/create/newDb/:id', function (req, res) {
     console.log(nano.config.url)
@@ -1057,16 +1209,16 @@ router.get('/search/:id', function(req,res) {
 
 
 router.post('/contact/:username/:email/:subject/:mes', function(req,res) {
-  // Get data from URL
-  var email = req.params.email;
-  var subject = req.params.subject;
-  var username = req.params.username;
-  var mes = req.params.mes;
+    // Get data from URL
+    var email = req.params.email;
+    var subject = req.params.subject;
+    var username = req.params.username;
+    var mes = req.params.mes;
 
-  // Write data into JSON file
-  var information = {'username': username, 'email': email, 'subject': subject, 'mes': mes};
+    // Write data into JSON file
+    var information = {'username': username, 'email': email, 'subject': subject, 'mes': mes};
 
-  console.log(information)
+    console.log(information)
 
   //Insert JSON file into DB
   nano.use('contact').insert(information);
@@ -1075,20 +1227,20 @@ router.post('/contact/:username/:email/:subject/:mes', function(req,res) {
 
 
 router.get('/deleteMsg/:id', function(req,res) {
-  // Get data from URL
-  var id=req.params.id;
-  var supression = {'id':id};
- // console.log(supression)
+    // Get data from URL
+    var id=req.params.id;
+    var supression = {'id':id};
+    // console.log(supression)
 
-  //Detele JSON file into DB
-  nano.use('contact').get(id, function(err,body){
-    //console.log(id)
-    body.email = ''
-    body.subject = ''
-    body.mes = ''
-    body.username=''
-   //console.log('hello')
-    nano.use('contact').insert(body)
-    //console.log(body.email)
-  })
+    //Detele JSON file into DB
+    nano.use('contact').get(id, function(err,body){
+        //console.log(id)
+        body.email = ''
+        body.subject = ''
+        body.mes = ''
+        body.username=''
+        //console.log('hello')
+        nano.use('contact').insert(body)
+        //console.log(body.email)
+    })
 });
