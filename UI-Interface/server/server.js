@@ -143,7 +143,7 @@ router.get('/getData/:token', function(req,res){
         .catch(function(error){
             res.json('JAMAIS VOUS N\'AUREZ CES DONNÉES !');
         })
-    
+
 })
 
 
@@ -192,32 +192,32 @@ var password = 'azerty01';
 var cookies = {}; // store cookies, normally redis or something
 
 // SSH connection
-/*var driver = require('node-ssh');
- var ssh = new driver();
- var localAddress = '/Users/Constance/Documents/Test/test.rtf';
- var serverAddress = '/data/local1/rcv';*/
+//var driver = require('node-ssh');
+//var ssh = new driver();
+//var localAddress = '/Users/Constance/Documents/Test/test.rtf';
+//var serverAddress = '/data/local1/rcv';
 
-/*ssh.connect({
- host: 'loria.loria.fr',
- username: 'cpineau',
- privateKey : '/Users/Constance/.ssh/id_rsa'
- }).then(function(){
- console.log("Connect 1");
- ssh.connect({
- host : 'mastodons.loria.fr',
- username : 'cpineau',
- //TODO : password
- }).then(function(){
- console.log('Youhou')
- }, function (err){
- console.log("Problème");
- console.log(err)
- })
+    /*ssh.connect({
+        host: 'loria.loria.fr',
+        username: 'cpineau',
+        privateKey : '/Users/Constance/.ssh/id_rsa'
+    }).then(function(){
+        console.log("Connect 1");
+        ssh.connect({
+            host : 'mastodons.loria.fr',
+            username : 'cpineau',
 
- }, function (error){
- console.log("Something wrong");
- console.log(error);
- });*/
+        }).then(function(){
+            console.log('Youhou')
+        }, function (err){
+            console.log("Problème");
+            console.log(err)
+        })
+
+    }, function (error){
+        console.log("Something wrong");
+        console.log(error);
+    });*/
 
 //Connection to Mastodons
 /*ssh.connect({
@@ -238,46 +238,46 @@ var cookies = {}; // store cookies, normally redis or something
  });
 
 
- /**********     CONNEXION ORACLE    **********/
+/**********     CONNEXION ORACLE    **********/
 
 
 /*router.get('/oracleConnect', function (req, res) {
- //console.log("canard");
- oracledb.getConnection(
- {
- user: "dae",
- password: "dae",
- connectString: "localhost/XE"
- },
- function (err, connection) {
- if (err) {
- console.error(err.message);
- return;
- }
- connection.execute(
- "SELECT id, path " +
- "FROM page_image "
- //+ "WHERE manager_id < :id",
- [110],  // bind value for :id
- function (err, result) {
- if (err) {
- console.error(err.message);
- doRelease(connection);
- return;
- }
- console.log(result.rows);
- doRelease(connection);
- });
- });
- });
+    //console.log("canard");
+    oracledb.getConnection(
+        {
+            user: "dae",
+            password: "dae",
+            connectString: "localhost/XE"
+        },
+        function (err, connection) {
+            if (err) {
+                console.error(err.message);
+                return;
+            }
+            connection.execute(
+                "SELECT id, path " +
+                "FROM page_image "
+                    //+ "WHERE manager_id < :id",
+                    [110],  // bind value for :id
+                function (err, result) {
+                    if (err) {
+                        console.error(err.message);
+                        doRelease(connection);
+                        return;
+                    }
+                    console.log(result.rows);
+                    doRelease(connection);
+                });
+        });
+});
 
- function doRelease(connection) {
- connection.close(
- function (err) {
- if (err)
- console.error(err.message);
- });
- };
+function doRelease(connection) {
+    connection.close(
+        function (err) {
+            if (err)
+                console.error(err.message);
+        });
+};
 
  /*********** FIN *************/
 
@@ -1220,8 +1220,8 @@ router.post('/contact/:username/:email/:subject/:mes', function(req,res) {
 
     console.log(information)
 
-    //Insert JSON file into DB
-    nano.use('contact').insert(information);
+  //Insert JSON file into DB
+  nano.use('contact').insert(information);
 });
 
 

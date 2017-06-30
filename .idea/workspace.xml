@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb688dbf-1fde-4dbb-945c-b079931b9a8c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/debug/Readme.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/.bin/jade" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/.bin/jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-animate/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-animate/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-aria/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-aria/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/angular-material.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/angular-material.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/core/core.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/core/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.css" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.min.css" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.min.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/closure/select/select.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/core/core.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/core/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.css" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.min.css" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.min.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/modules/js/select/select.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-material/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-messages/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-messages/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/release/angular-ui-router.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/release/angular-ui-router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/src/stateDirectives.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular-ui-router/src/stateDirectives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular/angular.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/angular/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/angular/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/body-parser/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/body-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/cookie-parser/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/cookie-parser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/client.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/file.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/file.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/stdio.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/stdio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/stream.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/stream.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/tracer.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/loggers/tracer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/selectors/random.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/selectors/random.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/serializers/json.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/elasticsearch/src/lib/serializers/json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/express/lib/application.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/express/lib/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/express/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/express/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/jade/bin/jade.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/jade/bin/jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/jade/jade.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/jade/jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/jade/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/jade/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/nano/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/nano/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/nano/scripts/run_couchdb_on_travis.sh" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/nano/scripts/run_couchdb_on_travis.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/nano/scripts/stop_couchdb_on_travis.sh" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/nano/scripts/stop_couchdb_on_travis.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/nano/tests/integration/shared/cookie.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/nano/tests/integration/shared/cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/serve-favicon/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/serve-favicon/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/.jshintrc" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/.jshintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/.npmignore" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/Gruntfile.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/LICENSE.txt" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/README.md" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/config/ssh.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/config/ssh.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/lib/ssh.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/lib/ssh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/test/ssh.js" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/simple-ssh/test/ssh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/node_modules/socket.io/package.json" afterPath="$PROJECT_DIR$/UI-Interface/node_modules/socket.io/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html" afterPath="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js" afterPath="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI-Interface/server/server.js" afterPath="$PROJECT_DIR$/UI-Interface/server/server.js" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="tutorial.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="57" lean-forward="false" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tutorial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tutorial.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/UI-Interface/server/server.js" />
+        <option value="$PROJECT_DIR$/CouchBase/1.html" />
+        <option value="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html" />
+        <option value="$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/UI-Interface/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI-Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dae-Ng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CouchBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="javascript.nodejs.core.library.configured.version" value="4.2.6" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Firefox Remote.dae">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="false" name="dae" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" editBeforeRun="true">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Firefox Remote.dae" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb688dbf-1fde-4dbb-945c-b079931b9a8c" name="Default" comment="" />
+      <created>1498218403022</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498218403022</updated>
+      <workItem from="1498218404478" duration="1538000" />
+      <workItem from="1498222369100" duration="1541000" />
+      <workItem from="1498226070699" duration="960000" />
+      <workItem from="1498335454349" duration="2754000" />
+      <workItem from="1498481314822" duration="418000" />
+      <workItem from="1498481756723" duration="68000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7279000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.253125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.496875" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32973805" sideWeight="0.51875" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32973805" sideWeight="0.48125" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41294298" sideWeight="0.49453124" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="57" lean-forward="false" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/algo/algo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/contact/contact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouchBase/1.html" />
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/contact/contact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/algo/algo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="149" column="28" lean-forward="false" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="57" lean-forward="false" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI-Interface/public/tutorial/tutorial.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
