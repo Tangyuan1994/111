@@ -1,44 +1,69 @@
-public static String postRate(String targetURL, String urlParameters) {
-  HttpURLConnection connection = null;
+*** Je ne sais pas si ça marche vraiment (ex: pas de reconnaissance user/pwd) ***
 
-  try {
-    //Create connection
-    URL url = new URL(targetURL);
-    connection = (HttpURLConnection) url.openConnection();
-    connection.setRequestMethod("POST");
-    connection.setRequestProperty("Content-Type", 
-        "application/x-www-form-urlencoded");
+package stage;
 
-    connection.setRequestProperty("Content-Length", 
-        Integer.toString(urlParameters.getBytes().length));
-    connection.setRequestProperty("Content-Language", "en-US");  
+import java.io.*;
+import java.net.*;
 
-    connection.setUseCaches(false);
-    connection.setDoOutput(true);
+public class GetData {
+	public static String address = "http://localhost:3000/";
+	public static String id;
 
-    //Send request
-    DataOutputStream wr = new DataOutputStream (
-        connection.getOutputStream());
-    wr.writeBytes(urlParameters);
-    wr.close();
+	public GetData() {}
+	// TODO Auto-generated constructor stub
 
-    //Get Response  
-    InputStream is = connection.getInputStream();
-    BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-    StringBuilder response = new StringBuilder(); // or StringBuffer if Java version 5+
-    String line;
-    while ((line = rd.readLine()) != null) {
-      response.append(line);
-      response.append('\r');
-    }
-    rd.close();
-    return response.toString();
-  } catch (Exception e) {
-    e.printStackTrace();
-    return null;
-  } finally {
-    if (connection != null) {
-      connection.disconnect();
-    }
-  }
+	public static String getHTML(String urlToRead) throws Exception {
+		StringBuilder result = new StringBuilder();
+		URL url = new URL(urlToRead);
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		String line;
+		while ((line = rd.readLine()) != null) {
+			result.append(line);
+		}
+		rd.close();
+		return result.toString();
+	}
+	
+	public static void main(String[] args) throws Exception
+	{
+		//System.out.println(getHTML(args[0]));
+		id = "5330e2f3a0dd8ee433e3e702df012c19";
+		URL url = new URL(address+ "datasets/" + id );
+		URLConnection conn = url.openConnection();
+		InputStream is = conn.getInputStream();
+		System.out.println(is.toString());
+	}
 }
+
+
+package stage;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.Base64;
+
+public class Connexion {
+	private static String path = "http://localhost:3000/";
+
+	public Connexion() {	}
+
+	public static void main(String[] args) throws Exception
+	{
+		String username = null;
+		String password = null; 
+		URL url = new URL(path + "connexion/"+ username + "/ " +password);
+		String userPass = username + ":" + password;
+		String basicAuth = "Basic " + new String( Base64.getEncoder().encode(userPass.getBytes()));
+		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+		urlConnection.setRequestProperty("Authorization", basicAuth);
+		urlConnection.connect();
+		// TODO Auto-generated constructor stub
+	}
+}
+
+
+
