@@ -28,11 +28,13 @@
                             <div ng-repeat="tag in tags">
                                 {{tag}}
                             </div>
-                            <div ng-repeat="rate in rates">
+                            <div ng-repeat="rate in rates track by $index">
                                 {{rate}}
                             </div>
-
                         </div>
+                    </div>
+                </div>
+            </div>
         </md-tab>
         <md-tab label="ElasticSearch" style="padding-left: 20px">
             <div style="padding-left: 20px">
@@ -53,7 +55,7 @@
                 <md-button ng-click="firebaseCreate()">Create Account</md-button>
                 <md-button ng-click="firebaseLogout()">Logout</md-button>
                 <md-button ng-click="firebaseIsConnected()">Check if connected</md-button>
-                <md-button ng-click="firebaseToken()">Get Token into Server</md-button>
+                <md-button ng-click="firebaseToken()">Get Token in Server</md-button>
                 <md-button ng-click="checkToken(900)">Check if random token work</md-button>
                 <md-divider></md-divider>
                 <md-button ng-click="requestToken(null)">Request Without Token</md-button>
@@ -75,6 +77,12 @@
 
 
             </div>
+        </md-tab>
+        <md-tab label="Data-Format" style="padding-left: 20px">
+            <form action="fileUpload" method="post" enctype="multipart/form-data">
+                <input type="file" name="filetoupload"><br>
+                <input type="submit">
+            </form>
         </md-tab>
     </md-tabs>
 </div>
