@@ -38,6 +38,66 @@ router.get('/', function (req, res, next) {
     res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));
 });
 
+
+
+/**
+ * Use ES for get the data sans image
+ * @param ES query
+ * @returns send reponse of Elasticsearch data sans image
+ */
+router.get('/:token/getData/:query', function (req, res,next) {
+
+    o.checkToken(req.body.token)
+        .then(function(response) {
+                console.log(response)
+
+                o.getESData(req.body.data.query)
+                    .then(function(response)
+                {
+                    res.json(response)
+                })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+});
+
+
+
+/**
+ * Use ES for get Images
+ * @param ES query
+ * @returns reponse of Elasticsearch
+ */
+router.get('/:token/getImage/:query', function (req, res) {
+
+    o.checkToken(req.body.token)
+        .then(function(response) {
+                console.log(response)
+                o.getESId(req.body.data.query)
+                    .then(function(response)
+                    {
+                        o.getAttachment(response)
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+});
+
+
+
+
+
 /**
  * Insert an object data with ID id into CouchDB (without attachment)
  * @param id = ID to insert
@@ -67,7 +127,7 @@ router.post('/postData', function (req, res, next) {
         .catch(function(error){
             console.log(error)
         })
-    
+
 });
 
 /**
