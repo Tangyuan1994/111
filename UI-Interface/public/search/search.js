@@ -11,7 +11,6 @@ angular.module('daeNG')
                 method: 'GET',
                 url: '/search/' + id
             }).then(function successCallback(response) {
-
                 $scope.image = response.data.image
                 console.log($scope.image)
                 console.log(id)

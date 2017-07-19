@@ -38,4 +38,100 @@ router.get('/', function (req, res, next) {
     res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));
 });
 
+/**
+ * Insert an object data with ID id into CouchDB (without attachment)
+ * @param id = ID to insert
+ * req.body = JSON object to insert
+ * @returns CouchDB response
+ */
+router.post('/postData', function (req, res, next) {
+    o.checkToken(req.body.token)
+        .then(function(response){
+            console.log(response)
+            o.postESData(req.body.data)
+                .then(function (response) {
+                    console.log(response)
+                    o.postCouchData(response.id, req.body.data)
+                        .then(function(response){
+                            console.log(response)
+                            res.json(response)
+                        })
+                        .catch(function(error){
+                            console.log(error)
+                        })
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    
+});
+
+/**
+ * Insert an object data with ID id into CouchDB (with attachment)
+ * @param id = ID to insert
+ * req.body = JSON object to insert
+ * @returns CouchDB response
+ */
+router.post('/postData', function (req, res, next) {
+    o.checkToken(req.body.token)
+        .then(function(response){
+            console.log(response)
+            o.postESData(req.body.data)
+                .then(function (response) {
+                    console.log(response)
+                    o.postAttachment(req.body.data, response.id)
+                        .then(function(response){
+                            console.log(response)
+                            res.json(response)
+                        })
+                        .catch(function(error){
+                            console.log(error)
+                        })
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+});
+
+
+/**
+ * Get the file with the ID id
+ * @param id = ID of the file
+ * @returns Bool
+ */
+
+router.get('/getFiles', function(req, res, next){
+    o.checkToken(req.body.token)
+        .then(function(response){
+            console.log(response)
+            o.getESId(req.param.body)
+                .then(function(response){
+                    console.log(response)
+                    o.getAttachment(response)
+                        .then(function(response){
+                            console.log(response)
+
+                        })
+                        .catch(function(error){
+                            console.log(error)
+                        })
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+});
+
 module.exports = router;
