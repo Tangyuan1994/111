@@ -41,52 +41,23 @@ router.get('/', function (req, res, next) {
 
 
 /**
- * Use ES for get the data sans image
+ * Use ES to get the data without attachment
  * @param ES query
- * @returns send reponse of Elasticsearch data sans image
+ * @returns send response of Elasticsearch data without attachment
  */
-router.get('/:token/getData/:query', function (req, res,next) {
+router.get('/getData', function (req, res,next) {
 
     o.checkToken(req.body.token)
         .then(function(response) {
                 console.log(response)
-
                 o.getESData(req.body.data.query)
-                    .then(function(response)
-                {
-                    res.json(response)
+                    .then(function(response) {
+                        res.json(response)
                 })
                     .catch(function(error){
                         console.log(error)
                     })
 
-        })
-        .catch(function(error){
-            console.log(error)
-        })
-
-});
-
-
-
-/**
- * Use ES for get Images
- * @param ES query
- * @returns reponse of Elasticsearch
- */
-router.get('/:token/getImage/:query', function (req, res) {
-
-    o.checkToken(req.body.token)
-        .then(function(response) {
-                console.log(response)
-                o.getESId(req.body.data.query)
-                    .then(function(response)
-                    {
-                        o.getAttachment(response)
-                    })
-                    .catch(function(error){
-                        console.log(error)
-                    })
         })
         .catch(function(error){
             console.log(error)
@@ -136,7 +107,7 @@ router.post('/postData', function (req, res, next) {
  * req.body = JSON object to insert
  * @returns CouchDB response
  */
-router.post('/postData', function (req, res, next) {
+router.post('/postFiles', function (req, res, next) {
     o.checkToken(req.body.token)
         .then(function(response){
             console.log(response)
@@ -173,12 +144,13 @@ router.get('/getFiles', function(req, res, next){
     o.checkToken(req.body.token)
         .then(function(response){
             console.log(response)
-            o.getESId(req.param.body)
+            o.getESId(req.body.data.query)
                 .then(function(response){
                     console.log(response)
                     o.getAttachment(response)
                         .then(function(response){
                             console.log(response)
+                            res.json(response)
 
                         })
                         .catch(function(error){

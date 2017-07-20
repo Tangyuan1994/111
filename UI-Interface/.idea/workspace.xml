@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1631cec2-743e-4810-9a2a-9f2f50ebb632" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
     </list>
     <ignored path="dae-ng.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +26,7 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="674">
               <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
               <folding />
             </state>
@@ -642,7 +643,7 @@
       <workItem from="1500303019762" duration="598000" />
       <workItem from="1500382907365" duration="560000" />
       <workItem from="1500464954283" duration="7243000" />
-      <workItem from="1500535849174" duration="790000" />
+      <workItem from="1500535849174" duration="1033000" />
     </task>
     <task id="LOCAL-00001" summary="Code architecture &amp;&amp; Add Scroll &amp;&amp; Some comments">
       <created>1494340553292</created>
@@ -742,11 +743,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500536506958</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="API modif">
+      <created>1500536651431</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1500536651431</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223321000" />
+    <option name="totallyTimeSpent" value="223564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,7 +819,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="ssh connect" />
     <MESSAGE value="API" />
-    <option name="LAST_COMMIT_MESSAGE" value="API" />
+    <MESSAGE value="API modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="API modif" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1100,7 +1109,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="674">
           <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
           <folding />
         </state>
