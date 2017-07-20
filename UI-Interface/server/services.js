@@ -6,6 +6,11 @@ var username = 'admin';
 var password = 'azerty01';
 var cookies = {}; // store cookies, normally redis or something
 
+//File Utilitaries
+var fs = require('fs')
+var formidable = require('formidable')
+
+
 
 //Initialize ElasticSearch
 var elasticsearch = require('elasticsearch');
@@ -161,28 +166,82 @@ services.postESData = function(data){
 
 /**
  * Get attachment from object
- * @param id = IdOfObject
- * @returns ...
+ * @param datas = Array of {ID,Name}
+ * @returns Array of Paths
  */
 
-services.getAttachment = function(id){
+services.getAttachment = function(datas){
     return new Promise(function(fulfill,reject){
-        console.log("Done")
-        fulfill("Done")
+        var res = [];
+        for (var i=0;i<datas.length;i++){
+            nano.use('images').attachment.get(datas[i].id, datas[i].name, function(err,body){
+                if (!err){
+                    fs.writeFile('tmp/'+datas[i].name, body, function(err,resp){
+                        if (!err){
+                            res.push('tmp/download/'+datas[i].name)
+                            if (res.length == datas.length){
+                                fulfill(res)
+                            }
+                        } else {
+                            reject(err)
+                        }
+                    })
+                } else {
+                    reject(err)
+                }
+            })
+        }
+    })
+};
+
+/**
+ * Post attachment to the given objects
+ * @param datas = Array[{ID,Paths,Data}]
+ * @returns CouchDB Response
+ */
+
+services.postAttachment = function(datas) {
+    return new Promise(function (fulfill, reject) {
+        var res=[]
+        for (var i=0;i<datas.length;i++){
+            fs.readFile(datas[i].path, function (err, resp) {
+                images.multipart.insert(datas[i].data, [{name: datas[i].name, data: resp, content_type: 'multipart/form-data'}], data[i].id, function (err, body) {
+                    if (!err) {
+                        res.push(body)
+                        if (res.length == datas.length){
+                            fulfill(res)
+                        }
+                    } else {
+                        reject(err)
+                    }
+                })
+            })
+        }
     })
 }
 
 /**
- * Post attachment to the given object
- * @param path = String : Path of attachment
- * @param id = IdOfObject
- * @returns CouchDB Response
+ * Upload Files
+ * @param HTTPRequest = HTTP Request to upload the file
+ * @returns Array[{Name, NewPath}]
  */
 
-services.postAttachment = function(path, id){
+services.uploadFiles = function(HTTPRequest){
     return new Promise(function(fulfill,reject){
-        console.log("Done")
-        fulfill("Done")
+        var form = new formidable.IncomingForm();
+        form.parse(HTTPRequest, function(err,fields,files){
+            var oldpath = files.image.path;
+            var newpath = 'tmp/upload/' + files.image.name;
+            fs.rename(oldpath, newpath, function(err){
+                if (!err){
+                    fulfill(newpath)
+                } else {
+                    fs.unlink(oldpath, function(){
+                        reject(err)
+                    })
+                }
+            })
+        })
     })
 }
 
