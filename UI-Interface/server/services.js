@@ -67,7 +67,7 @@ services.getCouchData = function(ids){
         var res = []
         for (var i=0; i<ids.length;i++){
             console.log("Hello world !")
-            nano.use('images').get(ids[i], function(err,body){
+            nano.use('dae').get(ids[i], function(err,body){
                 if (!err){
                     console.log(body)
                     res.push(body)
@@ -86,23 +86,26 @@ services.getCouchData = function(ids){
 
 /**
  * Insert an object data with ID id into CouchDB
- * @param id = ID to insert
- * @param data = JSON Object to insert
+ * @param datas = Array[{id,data}]
  * @returns CouchDB Response
  */
 
-services.postCouchData = function(id, data){
+services.postCouchData = function(datas){
     return new Promise(function (fulfill, reject){
-        console.log("Post Data")
-        var obj = Object.assign({id:id}, data)
-        console.log(obj)
-        nano.use("images").insert(obj, function(err,body){
-            if (!err){
-                fulfill(body)
-            } else {
-                reject(err)
-            }
-        })
+        var res = []
+        for (var i=0;i<datas.length;i++){
+            var obj = Object.assign({id:datas[i].id}, datas[i].data)
+            nano.use("dae").insert(obj, function(err,body){
+                if (!err){
+                    res.push(body)
+                    if (res.length == datas.length){
+                        fulfill(res)
+                    }
+                } else {
+                    reject(err)
+                }
+            })
+        }
     })
 }
 
@@ -174,7 +177,7 @@ services.getAttachment = function(datas){
     return new Promise(function(fulfill,reject){
         var res = [];
         for (var i=0;i<datas.length;i++){
-            nano.use('images').attachment.get(datas[i].id, datas[i].name, function(err,body){
+            nano.use('dae').attachment.get(datas[i].id, datas[i].name, function(err,body){
                 if (!err){
                     fs.writeFile('tmp/'+datas[i].name, body, function(err,resp){
                         if (!err){
