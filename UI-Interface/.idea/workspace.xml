@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1631cec2-743e-4810-9a2a-9f2f50ebb632" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/search/search.js" afterPath="$PROJECT_DIR$/public/search/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
     </list>
     <ignored path="dae-ng.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +25,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+            <state relative-caret-position="233">
+              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -37,8 +35,8 @@
       <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1027">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="2490">
+              <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +45,8 @@
       <file leaf-file-name="old_server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/old_server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3009">
-              <caret line="145" column="4" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
+            <state relative-caret-position="2145">
+              <caret line="145" column="4" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -340,65 +338,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-aria/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/angular-material.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/closure/core/core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/closure/select/select.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/closure/select/select.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/closure/select/select.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/closure/select/select.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/js/core/core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/js/select/select.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/js/select/select.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/js/select/select.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/modules/js/select/select.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-material/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-messages/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-ui-router/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-ui-router/release/angular-ui-router.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-ui-router/src/stateDirectives.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular/angular.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/body-parser/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/cookie-parser/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/debug/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/client.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/loggers/file.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/loggers/stdio.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/loggers/stream.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/loggers/tracer.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/selectors/random.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/elasticsearch/src/lib/serializers/json.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/express/lib/application.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/express/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/jade/bin/jade.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/jade/jade.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/jade/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nano/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nano/scripts/run_couchdb_on_travis.sh</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nano/scripts/stop_couchdb_on_travis.sh</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nano/tests/integration/shared/cookie.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/serve-favicon/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/.jshintrc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/.npmignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/Gruntfile.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/LICENSE.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/config/ssh.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/lib/ssh.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/simple-ssh/test/ssh.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/socket.io/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/admin/admin.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/admin/admin.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/browse/zoomPopup.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/index/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/tutorial/tutorial.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/tutorial/tutorial.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/LICENSE</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/changelog.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/package.json</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/server.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -407,19 +353,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/Dae-Ng.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/jsLibraryMappings.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/modules.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/vcs.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Packages/.gitkeep</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Packages/JAVA/.gitkeep</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Packages/JAVA/Dae_Package.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Packages/Python/Dae_Package.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/debug/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/old_server.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/services.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ssh/adminConfig.json</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -427,7 +360,45 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/debug/Readme.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/any.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/assert.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/async.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/bind.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/bluebird.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/call_get.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/cancel.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/captured_trace.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/catch_filter.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/context.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/debuggability.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/direct_resolve.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/each.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/errors.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/es5.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/filter.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/finally.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/generators.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/join.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/map.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/method.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/nodeify.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/progress.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise_array.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise_resolver.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promisify.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/props.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/queue.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/race.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/reduce.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/schedule.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/settle.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/some.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/synchronous_inspection.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/thenables.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/timers.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/using.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/util.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -670,7 +641,8 @@
       <workItem from="1500284312734" duration="465000" />
       <workItem from="1500303019762" duration="598000" />
       <workItem from="1500382907365" duration="560000" />
-      <workItem from="1500464954283" duration="6823000" />
+      <workItem from="1500464954283" duration="7243000" />
+      <workItem from="1500535849174" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="Code architecture &amp;&amp; Add Scroll &amp;&amp; Some comments">
       <created>1494340553292</created>
@@ -756,11 +728,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498116811554</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="API">
+      <created>1500478114043</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500478114043</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222111000" />
+    <option name="totallyTimeSpent" value="223181000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,7 +803,8 @@
     <MESSAGE value="Security - Removed Permissions" />
     <MESSAGE value="test" />
     <MESSAGE value="ssh connect" />
-    <option name="LAST_COMMIT_MESSAGE" value="ssh connect" />
+    <MESSAGE value="API" />
+    <option name="LAST_COMMIT_MESSAGE" value="API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1022,9 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,7 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="112" column="77" lean-forward="false" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,15 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-button#0;n#div#4;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1965">
           <caret line="131" column="102" lean-forward="false" selection-start-line="131" selection-start-column="102" selection-end-line="131" selection-end-column="102" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,15 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card#0;n#div#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#md-card#0;n#div#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#md-card-content#0;n#md-card#0;n#div#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card#1;n#div#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card#2;n#div#0;n#div#1;n#md-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,23 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="87" column="42" lean-forward="false" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="42" />
-          <folding>
-            <marker date="1500464968000" expanded="true" signature="1856:1860" ph="/** ------------------------------------------------------------------ ...*/" />
-            <marker date="1500464968000" expanded="true" signature="2076:2209" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="2221:2405" ph="/** ------------------------------------------------------------------ ...*/" />
-            <marker date="1500464968000" expanded="true" signature="2525:2585" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="2628:2912" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="2826:2900" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="2986:3663" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="3000:3181" ph="//..." />
-            <marker date="1500464968000" expanded="true" signature="3702:5176" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="3916:4042" ph="{&quot;method&quot;: 'GET'...}" />
-            <marker date="1500464968000" expanded="true" signature="4084:5086" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="4165:4956" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="4298:4388" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="5052:5072" ph="{...}" />
-            <marker date="1500464968000" expanded="true" signature="5116:5164" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,7 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,14 +1070,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/old_server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3009">
-          <caret line="145" column="4" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
+        <state relative-caret-position="2145">
+          <caret line="145" column="4" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1148,16 +1085,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1027">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="2490">
+          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+        <state relative-caret-position="233">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
           <folding />
         </state>
       </provider>
