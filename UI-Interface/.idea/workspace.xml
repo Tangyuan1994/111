@@ -26,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+            <state relative-caret-position="1243">
+              <caret line="163" column="69" lean-forward="false" selection-start-line="163" selection-start-column="69" selection-end-line="163" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -36,8 +36,8 @@
       <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="996">
-              <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="3405">
+              <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,11 +46,21 @@
       <file leaf-file-name="old_server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/old_server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="145" column="4" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
+            <state relative-caret-position="18900">
+              <caret line="1262" column="64" lean-forward="false" selection-start-line="1262" selection-start-column="64" selection-end-line="1262" selection-end-column="64" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Travail/TelecomNancy/Stage/2A/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -292,8 +302,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,162 +334,6 @@
       <recent name="C:\Users\Flow\Documents\Stage_Loria\Dae-Ng\daeng\UI-Interface\public" />
       <recent name="C:\Users\Flow\WebstormProjects\dae-ng\public\index" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/changelog.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/server.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/any.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/assert.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/async.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/bind.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/bluebird.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/call_get.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/cancel.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/captured_trace.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/catch_filter.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/context.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/debuggability.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/direct_resolve.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/each.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/errors.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/es5.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/filter.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/finally.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/generators.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/join.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/map.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/method.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/nodeify.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/progress.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise_array.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promise_resolver.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/promisify.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/props.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/queue.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/race.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/reduce.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/schedule.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/settle.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/some.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/synchronous_inspection.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/thenables.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/timers.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/using.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bluebird/js/main/util.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -643,7 +497,10 @@
       <workItem from="1500303019762" duration="598000" />
       <workItem from="1500382907365" duration="560000" />
       <workItem from="1500464954283" duration="7243000" />
-      <workItem from="1500535849174" duration="1033000" />
+      <workItem from="1500535849174" duration="8996000" />
+      <workItem from="1500559111343" duration="3912000" />
+      <workItem from="1500621090228" duration="941000" />
+      <workItem from="1500623860515" duration="141000" />
     </task>
     <task id="LOCAL-00001" summary="Code architecture &amp;&amp; Add Scroll &amp;&amp; Some comments">
       <created>1494340553292</created>
@@ -750,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500536651431</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="API modif">
+      <created>1500536912869</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1500536912870</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223564000" />
+    <option name="totallyTimeSpent" value="236521000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,8 +637,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.49788582" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047404" sideWeight="0.5264271" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15592028" sideWeight="0.49577168" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21775898" sideWeight="0.5045147" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21775898" sideWeight="0.5045147" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26260257" sideWeight="0.47357294" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -827,13 +691,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/tutorial/tutorial.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/ssh/priv.pem" />
@@ -958,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4185">
-          <caret line="279" column="15" lean-forward="false" selection-start-line="279" selection-start-column="15" selection-end-line="279" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/upload/upload.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1082,6 +932,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Travail/TelecomNancy/Stage/2A/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="279" column="15" lean-forward="false" selection-start-line="279" selection-start-column="15" selection-end-line="279" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/search/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1091,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/old_server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="145" column="4" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="4" />
+        <state relative-caret-position="18900">
+          <caret line="1262" column="64" lean-forward="false" selection-start-line="1262" selection-start-column="64" selection-end-line="1262" selection-end-column="64" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1101,16 +966,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="3405">
+          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+        <state relative-caret-position="1243">
+          <caret line="163" column="69" lean-forward="false" selection-start-line="163" selection-start-column="69" selection-end-line="163" selection-end-column="69" />
           <folding />
         </state>
       </provider>
