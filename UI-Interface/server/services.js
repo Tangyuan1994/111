@@ -9,7 +9,7 @@ var cookies = {}; // store cookies, normally redis or something
 //File Utilitaries
 var fs = require('fs')
 var formidable = require('formidable')
-
+var JSZip = require('jszip')
 
 
 //Initialize ElasticSearch
@@ -223,13 +223,77 @@ services.postAttachment = function(datas) {
     })
 }
 
+var random = function(taille){
+    var text = "";
+    var possible = "abcdefghijklmnopqrstuvwxyzAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
+
+    for( var i=0; i < taille; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+};
+
+/**
+ * Unzip File
+ * @param path = Path of Zip File
+ * @returns Array of Paths
+ */
+
+services.unZip = function(path){
+    return new Promise(function(fulfill,reject){
+        var folder = path.split('\\')[path.split('\\').length-1].split('\.')[0]
+        var loc = 'tmp/upload/unzip-'+random(6)+'/'
+        var res = [];
+        fs.mkdir(loc, function(err){
+            if (!err){
+                fs.readFile(path, function(err, data){
+                    if (!err){
+                        var zip = new JSZip();
+                        zip.loadAsync(data).then(function(contents){
+                            var cpt = Object.keys(contents.files).length
+                            Object.keys(contents.files).forEach(function(filename){
+                                var dest = loc + filename;
+                                if (filename.indexOf('.')<0){
+                                    cpt--
+                                    fs.mkdir(dest, function(err){
+                                        console.log("Creating folder done !")
+                                    })
+                                } else {
+                                    zip.files[filename].async('nodebuffer').then(function(content) {
+                                        fs.writeFile(dest, content, function(err){
+                                            if (!err){
+                                                res.push(dest)
+                                                if (res.length == cpt){
+                                                    fulfill(res)
+                                                }
+                                            } else {
+                                                reject(err)
+                                            }
+                                        });
+                                    });
+                                }
+                            });
+                        });
+                    } else {
+                        console.log(err)
+                        reject(err)
+                    }
+                })
+            } else {
+                console.log(err)
+                reject(err)
+            }
+        })
+    })
+}
+
 /**
  * Upload Files
  * @param HTTPRequest = HTTP Request to upload the file
  * @returns Array[{Name, NewPath}]
  */
 
-services.uploadFiles = function(HTTPRequest){
+services.uploadFile = function(HTTPRequest){
     return new Promise(function(fulfill,reject){
         var form = new formidable.IncomingForm();
         form.parse(HTTPRequest, function(err,fields,files){

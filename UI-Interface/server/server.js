@@ -16,14 +16,14 @@ router.get('/getData', function (req, res,next) {
 
     o.checkToken(req.body.token)
         .then(function(response) {
-                console.log(response)
-                o.getESData(req.body.data.query)
-                    .then(function(response) {
-                        res.json(response)
+            console.log(response)
+            o.getESData(req.body.data.query)
+                .then(function(response) {
+                    res.json(response)
                 })
-                    .catch(function(error){
-                        console.log(error)
-                    })
+                .catch(function(error){
+                    console.log(error)
+                })
 
         })
         .catch(function(error){
