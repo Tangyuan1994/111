@@ -290,7 +290,7 @@ services.unZip = function(path){
 /**
  * Upload Files
  * @param HTTPRequest = HTTP Request to upload the file
- * @returns Array[{Name, NewPath}]
+ * @returns NewPath
  */
 
 services.uploadFile = function(HTTPRequest){

@@ -15,25 +15,17 @@ var o = require('./services')
 router.get('/getData', function (req, res,next) {
 
     o.checkToken(req.body.token)
-        .then(function(response) {
+        .then(function (response) {
             console.log(response)
             o.getESData(req.body.data.query)
-                .then(function(response) {
+                .then(function (response) {
                     res.json(response)
                 })
-                .catch(function(error){
+                .catch(function (error) {
                     console.log(error)
                 })
-
         })
-        .catch(function(error){
-            console.log(error)
-        })
-
-});
-
-
-
+})
 
 
 /**
@@ -69,30 +61,39 @@ router.post('/postData', function (req, res, next) {
         .catch(function(error){
             console.log(error)
         })
-
 });
 
+
+// A REVOIR
 /**
  * Insert an object data with ID id into CouchDB (with attachment)
  * @param id = ID to insert
  * req.body = JSON object to insert
+ * req.body.path = path of the file on the client machine
  * @returns CouchDB response
  */
 router.post('/postFiles', function (req, res, next) {
+    var data = req.body.data
     o.checkToken(req.body.token)
         .then(function(response){
             console.log(response)
-            o.uploadFiles(req)
+            o.uploadFile(req)
                 .then(function(response){
                     console.log(response) //Array[{Name, NewPath}]
-                    o.postESData(req.body.data) // ArrayOf(JSON)
-                        .then(function (response2) {
-                            console.log(response2) //ArrayOf({Position in Data,ID of object})
-                            tab=[]
+                    o.unZip(response)
+                        .then(function (response2){
                             for (var i=0; i<response2.length; i++){
-                                tab.push({id:response2[i].id, path: response[i].newpath, data:req.body.data[response2[i].pos]})
+                                var tmp = req.body.path.split('\\').pop()
+                                console.log(tmp)
+                                var dirname = req.body.path.replace('\\'+tmp, '')
+                                var dirname2 = response2[0].split('\\')[0] +response2[0].split('\\')[1]
+                                for (var j =0; j<data.length; j++){
+                                    if (data[j].path.replace(dirname,'').replace('\\','/') == response2[i].replace(dirname2,'')){
+                                        res.push(data[j].id, response2[i].path, data[j].data)
+                                    }
+                                }
                             }
-                            o.postAttachment(tab) //datas = Array[{ID,Paths,Data}]
+                            o.postAttachment(res) //datas = Array[{ID,Paths,Data}]
                                 .then(function(response){
                                     console.log(response)
                                     res.json(response)
@@ -142,7 +143,6 @@ router.get('/getData', function (req, res,next) {
  * @param id = ID of the file
  * @returns Bool
  */
-
 router.get('/getFiles', function(req, res, next){
     o.checkToken(req.body.token)
         .then(function(response){
@@ -168,7 +168,6 @@ router.get('/getFiles', function(req, res, next){
                         .then(function(response){
                             console.log(response)
                             res.json(response)
-
                         })
                         .catch(function(error){
                             console.log(error)
@@ -177,6 +176,7 @@ router.get('/getFiles', function(req, res, next){
                 .catch(function(error){
                     console.log(error)
                 })
+
         })
         .catch(function(error){
             console.log(error)
