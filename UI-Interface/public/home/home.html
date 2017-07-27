@@ -1,6 +1,7 @@
 <md-content layout="row" style="padding:20px; height:100%; layout-align:center stretch">
 
 
+
     <div flex="40" layout="column">
         <div flex="25">
             hello world
@@ -16,26 +17,44 @@
         </div>
     </div>
 
+
     <form flex="60" layout="column" ng-controller="HomeController">
-            <div flex="25">
-            <label>UserName: <input type="text" ng-model="username" /></label><br />
+        <div flex="20">
+            <input placeholder="User Name"
+                   name="name" ng-model="user.theName"
+                   required pattern=".{2,}" />
+        </div>
+        <div flex="20">
+            <input placeholder="Email"
+                   name="email" ng-model="user.theEmail"
+                   type="email" required />
+        </div>
+        <div flex="20">
+            <input placeholder="Password"
+                   name="pwd" ng-model="user.thePwd"
+                   type="password" pattern=".{2,}" required />
+        </div>
+        <div flex="20">
+            <input placeholder="Confirm Password"
+                   name="chk" ng-model="chkPwd"
+                   type="password"
+                   wj-validation-error="chkPwd != user.thePwd ? 'Passwords don\'t match' : ''" />
+        </div>
+        <div flex="25" layout="row">
+            <div flex="50">
+                <input type="reset" id="resetData"  ng-click="reset(user)" value="Reset" />
             </div>
-            <div flex="25">
-            <label>Password: <input type="password" ng-model="password" /></label><br />
-            </div>
-            <div flex="25">
-            <label>Confirm&nbsp;Password: <input type="password" ng-model="confirmpassword" pw-check="userPassword"/></label><br />
-            </div>
-            <div flex="25" layout="row">
-                <div flex="50">
-                <input type="reset" id="resetData"  ng-click="reset(user)" value="reset" />
-                </div>
-                <div flex="50">
-                    <input type="submit" id="SubmitData" ng-click="update(user)" value="Submit" />
-                </div>
+            <div flex="50">
+                <button type="submit" ng-click="update(user)">
+                    Create Account
+                </button>
+                <button ng-click="toggleSignIn()">
+                    Sign In
+                </button>
 
+                <pre>user = {{user | json}}</pre>
+                <pre>master = {{master | json}}</pre>
             </div>
-
+        </div>
     </form>
-
-
+</md-content>
