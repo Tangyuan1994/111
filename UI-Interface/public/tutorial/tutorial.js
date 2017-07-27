@@ -1,5 +1,6 @@
 angular.module('daeNG')
-    .controller('TutorialController', function ($scope) {
-    });
+  .controller('TutorialController', function ($scope) {
 
+
+  });
 

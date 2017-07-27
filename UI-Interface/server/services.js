@@ -9,7 +9,7 @@ var cookies = {}; // store cookies, normally redis or something
 //File Utilitaries
 var fs = require('fs')
 var formidable = require('formidable')
-var JSZip = require('jszip')
+//var JSZip = require('jszip')
 
 
 //Initialize ElasticSearch

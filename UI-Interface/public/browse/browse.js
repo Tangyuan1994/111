@@ -1,9 +1,105 @@
 /**
  * Created by Flow on 24/04/2017.
  */
+var browse = angular.module('daeNG');
 
-angular.module('daeNG')
-    .controller('BrowseController', function ($scope, $mdMenu, $http, $mdDialog) {
+/*
+browse.factory('BrowseFactory', function ($q, elasticsearch, $location) {
+    var elasticsearch = require('elasticsearch');
+    var client = new elasticsearch.Client({
+        host: 'localhost:9200',
+        log: 'trace'
+    });
+
+
+
+    client.ping({
+        // ping usually has a 3000ms timeout
+        requestTimeout: 1000
+    }, function (error) {
+        if (error) {
+            console.trace('elasticsearch cluster is down!');
+        } else {
+            console.log('All is well');
+        }
+    });
+
+
+    client.search({
+        q: 'pants'
+    }).then(function (body) {
+        var hits = body.hits.hits;
+    }, function (error) {
+        console.trace(error.message);
+    });
+
+
+    client.search({
+        index: 'dae',
+        type: 'logs',
+        body: {
+            query: {
+                match: {
+                    body: 'elasticsearch'
+                }
+            }
+        }
+    }).then(function (resp) {
+        var hits = resp.hits.hits;
+    }, function (err) {
+        console.trace(err.message);
+    });
+
+
+    });
+    /!*
+
+*/
+/*
+
+    ['$q', 'esFactory', '$location', function($q, elasticsearch, $location){
+        var client = elasticsearch({
+            host: $location.host() + ":9200"
+        });
+        console.log ("inf à 6")
+
+        var search = function(term, offset){
+            var deferred = $q.defer();
+            var query = {
+                "match": {
+                    "_all": term
+                }
+            };
+
+            client.search({
+                "index": 'dae',
+                "body": {
+                    "size": 10,
+                    "from": (offset || 0) * 10,
+                    "query": query
+                }
+            }).then(function(result) {
+                var ii = 0, hits_in, hits_out = [];
+                hits_in = (result.hits || {}).hits || [];
+                for(;ii < hits_in.length; ii++){
+                    hits_out.push(hits_in[ii]._source);
+                }
+                deferred.resolve(hits_out);
+            }, deferred.reject);
+
+            return deferred.promise;
+        };
+
+        return {
+            "search": search
+        };
+    }]
+);
+*!/
+*/
+
+
+browse.controller('BrowseController', function ($scope, $mdMenu, $http, $mdDialog,$location) {
 
         $scope.value = "Browse Data"
         $scope.typeSort = "popularity"
@@ -75,7 +171,5 @@ angular.module('daeNG')
         }, function errorCallback(response) {
             console.log(response)
         });
-
-
 
     });

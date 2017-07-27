@@ -8,25 +8,51 @@
     </div>
     {{test}}
 
-    <br>
-    </br>
-    <br>
-    </br>
-
-    <div flex="20">
-       Search by ID:
-        <md-input-container>
-            <label>Search by ID:</label>
-            <input type="text" name="id" ng-model="dataSearch.id">
-        </md-input-container>
-        {{dataSearch.id}}
-    </div>
-
+<br>
+<br>
 
     <div flex="10">
-        <md-button class="md-raised md-primary val-button" ng-click="chercher()">Search</md-button>
+        <md-button class="md-raised md-primary val-button" ng-click="chercher()">Show Me Pictures</md-button>
     </div>
 
     <img ng-src="data:image/png;base64,{{image}}">
+
+
+
+    <div flex="10">
+        <md-button class="md-raised md-primary val-button" ng-click="chercher2()">Show Me Another Pictures</md-button>
+    </div>
+    <div ng-repeat="data in browsedImages2" style="border:solid 0.5px #707070;" >
+        <img ng-src="data:image/png;base64,{{data}}">
+    </div>
+
+
+
+    <div flex="10">
+
+
+    </div>
+
+
+
+
+    <md-button class="md-raised md-primary val-button" ng-click="chercher3()">Show Me Another Pictures3</md-button>
+
+    <div ng-repeat="data in browsedImages" style="border:solid 0.5px #707070;" >
+        <img ng-src="data:image/png;base64,{{data.value.image}}">
+    </div>
+
+<br>
+    <md-button class="md-raised md-primary val-button" ng-click="newSearch()">Show Me Another Pictures4</md-button>
+
+    <div ng-repeat="data in image1" style="border:solid 0.5px #707070;" >
+        <img ng-src="data:image/png;base64,{{data}}">
+    </div>
+
+    <br>
+    <md-button class="md-raised md-primary val-button" ng-click="chercher5()">Show Me Another Pictures5</md-button>
+
+      {{Tagg}}
+
 
 </md-content>

@@ -71,17 +71,41 @@
             </md-card>
             <md-card flex-md="50" flex-gt-md="55" style="text-align: center">
                 <h3>UNLV</h3>
-                <md-card-content>
+                <md-card-content ng-click="zoom()" layout="column" >
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesTop" style="border:solid 0.5px #707070;" >
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
+
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesBot">
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
 
                 </md-card-content>
             </md-card>
             <md-card flex-md="50" flex-gt-md="55" style="text-align: center">
                 <h2>Card title #2</h2>
-                <md-card-content>
-                    <p>Some content</p>
+                <md-card-content ng-click="zoom()" layout="column" >
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesTop" style="border:solid 0.5px #707070;" >
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
+
+                    <div layout ="rows" layout-align="space-around center">
+                        <div ng-repeat="data in browsedImagesBot">
+                            <img ng-src="data:image/png;base64,{{data.value.image}}">
+                        </div>
+                    </div>
+
                 </md-card-content>
-            </md-card>
         </div>
     </div>
 
 </md-content>
+
+
+

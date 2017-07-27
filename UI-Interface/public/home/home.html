@@ -1,15 +1,41 @@
-<md-content style="padding: 15px">
-    <div ng-show="principal.isAuthenticated()">
-        I'm logged in
+<md-content layout="row" style="padding:20px; height:100%; layout-align:center stretch">
+
+
+    <div flex="40" layout="column">
+        <div flex="25">
+            hello world
+        </div>
+        <div flex="25">
+            hello world
+        </div>
+        <div flex="25">
+            hello world
+        </div>
+        <div flex="25">
+            hello world
+        </div>
     </div>
-    <div ng-hide="principal.isAuthenticated()">
-        I'm not logged in
-    </div>
-    <div ng-hide="principal.isIdentityResolved()">
-        You're anonymous
-    </div>
-    <div ng-show="principal.isIdentityResolved()">
-        Welcome dear {{principal.getIdentity()}}
-    </div>
-    Hello world ! Je suis un {{value}} de {{title}}. Bienvenue !
-</md-content>
+
+    <form flex="60" layout="column" ng-controller="HomeController">
+            <div flex="25">
+            <label>UserName: <input type="text" ng-model="username" /></label><br />
+            </div>
+            <div flex="25">
+            <label>Password: <input type="password" ng-model="password" /></label><br />
+            </div>
+            <div flex="25">
+            <label>Confirm&nbsp;Password: <input type="password" ng-model="confirmpassword" pw-check="userPassword"/></label><br />
+            </div>
+            <div flex="25" layout="row">
+                <div flex="50">
+                <input type="reset" id="resetData"  ng-click="reset(user)" value="reset" />
+                </div>
+                <div flex="50">
+                    <input type="submit" id="SubmitData" ng-click="update(user)" value="Submit" />
+                </div>
+
+            </div>
+
+    </form>
+
+
