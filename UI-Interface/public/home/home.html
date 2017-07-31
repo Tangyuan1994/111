@@ -1,19 +1,15 @@
+
 <md-content layout="row" style="padding:20px; height:100%; layout-align:center stretch">
 
-
-
     <div flex="40" layout="column">
-        <div flex="25">
-            hello world
+        <div flex="30">
+            hello Client
         </div>
-        <div flex="25">
-            hello world
+        <div flex="40">
+           Please create a new account
         </div>
-        <div flex="25">
-            hello world
-        </div>
-        <div flex="25">
-            hello world
+        <div flex="40">
+          Or click the button to log in your account
         </div>
     </div>
 
@@ -22,7 +18,7 @@
         <div flex="20">
             <input placeholder="User Name"
                    name="name" ng-model="user.theName"
-                   required pattern=".{2,}" />
+                   required pattern=".{3,}" />
         </div>
         <div flex="20">
             <input placeholder="Email"
@@ -32,7 +28,7 @@
         <div flex="20">
             <input placeholder="Password"
                    name="pwd" ng-model="user.thePwd"
-                   type="password" pattern=".{2,}" required />
+                   type="password" pattern=".{3,}" required />
         </div>
         <div flex="20">
             <input placeholder="Confirm Password"
@@ -48,7 +44,7 @@
                 <button type="submit" ng-click="update(user)">
                     Create Account
                 </button>
-                <button ng-click="toggleSignIn()">
+                <button ng-click="toggleSignIn(user)">
                     Sign In
                 </button>
 
