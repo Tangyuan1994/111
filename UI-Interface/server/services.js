@@ -407,4 +407,56 @@ services.checkToken = function(token){
     })
 };
 
+
+/**
+ * Create a New Account
+ * @param username
+ * @param password
+ * @returns bool
+ */
+services.createAccount = function(username, password){
+  return new Promise(function(fulfill,reject){
+     fb.auth().createUserWithEmailAndPassword(username, password)
+       .then(function(response){
+         fulfill(response)
+       })
+       .catch(function(error) {
+         if (error.Code == 'auth/weak-password') {
+          console.log('The password is too weak.');
+         } else {
+          console.log(error);
+        }
+        reject(error)
+      });
+  })
+};
+
+/**
+ *  Login In Account
+ * @param username
+ * @param password
+ * @returns bool
+ */
+services.signInAccount = function(username, password){
+  return new Promise(function(fulfill,reject){
+    fb.auth().signInWithEmailAndPassword(username, password)
+      .then(function(response){
+          fulfill(response)
+      })
+      .catch(function(error){
+        if (error.code === 'auth/wrong-password') {
+          console.log('Wrong password.');
+        } else {
+          console.log(error);
+        }
+        reject(error)
+
+      })
+  })
+};
+
+
+
+
 module.exports = services;
+
