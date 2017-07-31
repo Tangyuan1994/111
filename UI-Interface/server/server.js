@@ -184,8 +184,57 @@ router.get('/getFiles', function(req, res, next){
 });
 
 
+
+
+/**
+ * Create a new account
+ * @param username
+ * @param password
+ * @returns send response of create a new account
+ */
+router.post('/homeCreateAccount/:username/:email', function(req,res) {
+  var username=req.params.user.theName;
+  var password=req.params.user.thePwd;
+
+  console.error("Account creation for " + username + " " + password);
+
+  o.createAccount(username,password)
+    .then(function(response) {
+      console.log(response)
+      res.json(response)
+    })
+    .catch(function(error){
+      console.log(error)
+    })
+});
+
+
+/**
+ * SignIn the account
+ * @param username
+ * @param password
+ * @returns send response of SignIn the account
+ */
+router.get('/homeSignIn/:username/:email', function(req,res) {
+  var username=req.params.user.theName;
+  var password=req.params.user.thePwd;
+  res.json(username)
+  /*o.signInAccount(username,password)
+    .then(function(response) {
+          res.json(response)
+          console.log(response)
+
+    })
+    .catch(function(error){
+      console.log(error)
+    })*/
+});
+
+
 router.get('/', function (req, res, next) {
     res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));
 });
 
 module.exports = router;
+
+
