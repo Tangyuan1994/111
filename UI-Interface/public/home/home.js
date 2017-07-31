@@ -4,34 +4,34 @@
 
 angular.module('daeNG')
 
-    .controller('HomeController', function ($scope, $mdMenu) {
+    .controller('HomeController', function ($scope,$http, $window) {
 
-        $scope.user.thePwd='';
-        $scope.user.theEmail='';
-        $scope.master = {};
+      $scope.master = {};
+      $scope.user.theName='';
+      $scope.user.thePwd='';
+      $scope.user.theEmail = ''
 
+      $scope.update = function(user) {
+        var username=$scope.user.theName
+        var email=$scope.user.theEmail
+        var password= $scope.user.thePwd
+        console.log( "username est:"+username)
+        console.log( "email est:"+email)
+        $scope.master = angular.copy(user);
 
-        $scope.update = function(user) {
-            var firebase = require("firebase");
-
-            var config = {
-                apiKey: "AIzaSyBcuwhwkzvIIcEA95THJr3wfzJV56qwunU",
-                authDomain: "dae-ng.firebaseapp.com",
-                databaseURL: "https://dae-ng.firebaseio.com",
-                projectId: "dae-ng",
-                storageBucket: "dae-ng.appspot.com",
-                messagingSenderId: "445799919658"
-            };
-            var fb = firebase.initializeApp(config);
-
-            $scope.master = angular.copy(user);
-            var pswd = $scope.user.thePwd
-            var email = $scope.user.theEmail
-
-            fb.auth().createUserWithEmailAndPassword(email, pswd).catch(function(error) {
-                console.log(error);
-            });
-        };
+        //$window.open('http://www.google.fr', 'C-Sharpcorner', 'width=500,height=400');
+        //$window.open('home/home2.html', 'C-Sharpcorner', 'width=500,height=400');
+        $http({
+          method:'POST',
+          url: '/homeCreateAccount/'+username+"/"+email
+        }).then(function successCallBack(response){
+          //console.log("Server Response: " + response)
+          console.log('Hello1')
+        }, function errorCallBack(error){
+          console.log('Hello2')
+          //console.log("Account creation Error " + error.message)
+        })
+      };
 
         $scope.reset = function() {
             $scope.user = angular.copy($scope.master);
@@ -40,48 +40,24 @@ angular.module('daeNG')
         $scope.reset();
 
 
-        $scope.toggleSignIn= function() {
-            var pswd = $scope.user.thePwd
-            var email = $scope.user.theEmail
 
-            if (fb.auth().currentUser) {
-                fb.auth().signOut();
-            } else {
-                fb.auth().signInWithEmailAndPassword(email, pswd).catch(function(error) {
+      $scope.toggleSignIn = function(user) {
+        var username=$scope.user.theName
+        var email=$scope.user.theEmail
+        var password= $scope.user.thePwd
 
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    if (firebase.auth().currentUser) {
-                        fb.auth().currentUser.sendEmailVerification().then(function () {
-                            // Email Verification sent!
-                            // [START_EXCLUDE]
-                            alert('Email Verification Sent!');
-                            // [END_EXCLUDE]
-                        });
-                    }
-                    if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
-                    } else {
-                        alert(errorMessage);
-                    }
-                    console.log(error);
-                });
-            }
-        }
+        $scope.master = angular.copy(user);
 
-    });
+        $http({
+          method:'POST',
+          url: '/homeSignIn/'+username+"/"+email
+        }).then(function successCallBack(response){
+          console.log(response)
+          console.log('Hello')
+        }, function errorCallBack(error){
+          console.log(error)
+        })
 
 
-angular.module("daeNG")
-    .directive('wjValidationError', function () {
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctl) {
-            scope.$watch(attrs['wjValidationError'], function (errorMsg) {
-                elm[0].setCustomValidity(errorMsg);
-                ctl.$setValidity('wjValidationError', errorMsg ? false : true);
-            });
-        }
-    };
-});
+      };
 
